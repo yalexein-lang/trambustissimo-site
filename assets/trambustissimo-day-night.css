@@ -179,3 +179,16 @@ html[data-tramb-theme="day"] .products-family__list strong { color: rgba(0,0,0,.
 html[data-tramb-theme="day"] .products-family__list a[data-stage="available"] em { color: #7a3026; }
 html[data-tramb-theme="day"] .products-family__list a[data-stage="preparing"] em { color: #3d3b37; }
 html[data-tramb-theme="day"] .products-family__list a[data-stage="development"] em { color: #55534e; }
+
+/* Once the page scrolls, the sticky header becomes labels/buttons only. */
+body.products-showcase-page.is-header-overlay-only .products-header {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+body.products-showcase-page.is-header-overlay-only .products-header::before,
+body.products-showcase-page.is-header-overlay-only .products-header::after {
+  display: none !important;
+}
