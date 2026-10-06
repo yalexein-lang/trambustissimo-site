@@ -173,7 +173,7 @@ async function request(operation,payload={}){
   if(op==='applySequenceScene'||op==='sequenceSceneApply')return{accepted:true,snapshot:snapshot()};
   if(op==='runtimeProductSnapshot')return{accepted:true,snapshot:{}};
   if(op==='runtimeProductControls'||op==='runtimeProductCommand'||op==='sequencerTransport')return{accepted:true};
-  if(op==='openExternalUrl'){const url=String(payload.url||'');if(/^https:\/\/(www\.)?alessandroguardascione\.com(?:\/|$)/.test(url)||url==='mailto:support@alessandroguardascione.com'){window.open(url,'_blank','noopener');return{accepted:true}}return{accepted:false};}
+  if(op==='openExternalUrl'){const url=String(payload.url||'');if(/^https:\/\/(www\.)?trambustissimo\.com(?:\/|$)/.test(url)||url==='https://trambustissimo.com/'){window.open(url,'_blank','noopener');return{accepted:true}}return{accepted:false};}
   return{accepted:true,snapshot:snapshot()};
 }
 

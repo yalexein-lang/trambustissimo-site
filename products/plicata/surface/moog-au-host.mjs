@@ -698,7 +698,7 @@ const adapter={
       if(result)return result
     }
     if(action==='app.openExternalUrl'){
-      const url=String(payload?.url||'').trim(),allowed=url==='mailto:support@alessandroguardascione.com'||/^https:\/\/(?:www\.)?alessandroguardascione\.com(?:\/|$)/i.test(url)
+      const url=String(payload?.url||'').trim(),allowed=url==='https://trambustissimo.com/'||/^https:\/\/(?:www\.)?trambustissimo\.com(?:\/|$)/i.test(url)
       if(!allowed)return{accepted:false,reason:'external-url-not-allowed'}
       const result=await host.request('openExternalUrl',{url})
       return{accepted:result?.accepted===true,reason:String(result?.reason||'')}
