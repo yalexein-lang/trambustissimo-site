@@ -31,17 +31,13 @@ html[data-tramb-theme="day"] .products-showcase-page .skip-link {
 html[data-tramb-theme="day"] .products-showcase-page :focus-visible { outline-color: #090909; }
 
 html[data-tramb-theme="day"] .products-header {
-  background: rgba(246,246,246,.76);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
-html[data-tramb-theme="day"] .products-header::before {
-  background:
-    radial-gradient(ellipse 72% 120% at 76% 0%, rgba(var(--header-rgb), .34), transparent 72%),
-    linear-gradient(105deg, rgba(var(--header-rgb), .24), rgba(var(--header-rgb), .08) 58%, rgba(246,246,246,.92)),
-    #f6f6f6;
-}
-html[data-tramb-theme="day"] .products-header::after {
-  background: linear-gradient(90deg, transparent, rgba(13,13,13,.44) 18%, rgba(13,13,13,.62) 76%, transparent);
-}
+html[data-tramb-theme="day"] .products-header::before { display: none; }
+html[data-tramb-theme="day"] .products-header::after { display: none; }
 
 html[data-tramb-theme="day"] .products-header__nav a {
   color: color-mix(in srgb, rgb(var(--nav-rgb)) 62%, #101010 38%);
@@ -180,15 +176,24 @@ html[data-tramb-theme="day"] .products-family__list a[data-stage="available"] em
 html[data-tramb-theme="day"] .products-family__list a[data-stage="preparing"] em { color: #3d3b37; }
 html[data-tramb-theme="day"] .products-family__list a[data-stage="development"] em { color: #55534e; }
 
-/* Once the page scrolls, the sticky header becomes labels/buttons only. */
-body.products-showcase-page.is-header-overlay-only .products-header {
+
+/* Once the page scrolls, remove the sticky header completely. */
+body.products-showcase-page .products-header {
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease;
+}
+body.products-showcase-page.is-header-hidden .products-header {
+  opacity: 0 !important;
+  transform: translateY(-110%) !important;
+  pointer-events: none !important;
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   box-shadow: none !important;
-  border-color: transparent !important;
 }
-body.products-showcase-page.is-header-overlay-only .products-header::before,
-body.products-showcase-page.is-header-overlay-only .products-header::after {
+body.products-showcase-page.is-header-hidden .products-header::before,
+body.products-showcase-page.is-header-hidden .products-header::after {
   display: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.products-showcase-page .products-header { transition: none !important; }
 }

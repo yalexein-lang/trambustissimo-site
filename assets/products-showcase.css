@@ -82,9 +82,10 @@ body.products-showcase-page::before {
   align-items: center;
   padding: 10px var(--products-pad);
   border-bottom: 0;
-  background: rgba(9,9,9,.68);
-  backdrop-filter: blur(18px) saturate(118%);
-  -webkit-backdrop-filter: blur(18px) saturate(118%);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
 }
 .products-showcase-page[data-active-product="plicata"] .products-header { --header-rgb: 192, 92, 67; }
 .products-showcase-page[data-active-product="monodia"] .products-header { --header-rgb: 68, 124, 96; }
@@ -94,31 +95,13 @@ body.products-showcase-page::before {
 .products-showcase-page[data-active-product="mutavia"] .products-header { --header-rgb: 180, 79, 98; }
 .products-showcase-page[data-active-product="tacta"] .products-header { --header-rgb: 179, 62, 59; }
 .products-header::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 72% 120% at 76% 0%, rgba(var(--header-rgb), .56), transparent 72%),
-    linear-gradient(105deg, rgba(var(--header-rgb), .42), rgba(var(--header-rgb), .18) 58%, rgba(9, 9, 9, .9)),
-    #090909;
-  filter: saturate(1.12);
-  transition: background 420ms ease, filter 420ms ease;
-  -webkit-mask-image: none;
-  mask-image: none;
+  display: none;
 }
+
 .products-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 3px;
-  width: calc(var(--scroll-progress) * 100%);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(242,240,234,.54) 18%, rgba(242,240,234,.7) 76%, transparent);
-  pointer-events: none;
-  transition: width 80ms linear;
+  display: none;
 }
+
 .products-brand {
   display: flex;
   align-items: center;
@@ -153,8 +136,9 @@ body.products-showcase-page::before {
   line-height: 1;
   letter-spacing: .09em;
   color: color-mix(in srgb, rgb(var(--nav-rgb)) 68%, #f4f1e8 32%);
-  background: rgba(var(--nav-rgb), .055);
-  transition: color 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  background: transparent;
+  box-shadow: none;
+  transition: color 180ms ease, border-color 180ms ease;
 }
 .products-header__nav a::after {
   content: "";
@@ -180,13 +164,13 @@ body.products-showcase-page::before {
 .products-header__nav a[aria-current="true"] {
   color: #fff;
   border-color: rgba(var(--nav-rgb), .72);
-  background: rgba(var(--nav-rgb), .2);
-  box-shadow: 0 0 18px rgba(var(--nav-rgb), .12);
+  background: transparent;
+  box-shadow: none;
 }
 .products-header__nav a[aria-current="true"]::after {
   transform: scaleX(1);
   background: rgb(var(--nav-rgb));
-  box-shadow: 0 0 12px rgba(var(--nav-rgb), .28);
+  box-shadow: none;
 }
 .store-cart-trigger {
   min-width: 88px;

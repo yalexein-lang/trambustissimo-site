@@ -65,7 +65,7 @@
     frameRequested = false;
     const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     root.style.setProperty('--scroll-progress', Math.min(1, Math.max(0, window.scrollY / maxScroll)).toFixed(5));
-    page.classList.toggle('is-header-overlay-only', window.scrollY > 12);
+    page.classList.toggle('is-header-hidden', window.scrollY > 12);
     updateChapterVisuals();
     const probeY = window.innerHeight * 0.42;
     const activeChapter = chapters.find((chapter) => {
