@@ -1,0 +1,44 @@
+/* Trambustissimo header brand — generated from the approved local editor settings. */
+.products-brand {
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 29px !important;
+  font-weight: 800 !important;
+  letter-spacing: 4.25px !important;
+  line-height: .95 !important;
+  padding: 8px 0 !important;
+  white-space: nowrap !important;
+}
+.products-brand > span:first-child {
+  display: inline-block !important;
+  background: linear-gradient(234deg, #49d5f8, #49d5f8, #ff684d, #49d5f8) !important;
+  background-size: 320% 320% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: trambBrandAurora 21s ease-in-out infinite !important;
+  filter: drop-shadow(0 0 20px #49d5f888) !important;
+}
+.products-brand .tramb-letter {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  flex: 0 0 var(--tramb-slot-width) !important;
+  width: var(--tramb-slot-width) !important;
+  min-width: var(--tramb-slot-width) !important;
+  max-width: var(--tramb-slot-width) !important;
+  margin-right: 4.25px !important;
+  letter-spacing: 0 !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.products-brand .tramb-letter:last-child { margin-right: 0 !important; }
+@keyframes trambBrandAurora {
+  0%,100% { background-position:0% 50%; filter:drop-shadow(0 0 11.00px #49d5f866); }
+  50% { background-position:100% 50%; filter:drop-shadow(0 0 20px #49d5f8aa); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .products-brand > span:first-child,
+  .products-brand .tramb-letter { animation: none !important; }
+}

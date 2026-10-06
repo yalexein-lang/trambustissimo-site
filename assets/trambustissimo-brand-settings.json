@@ -1,0 +1,144 @@
+{
+  "angle": 234,
+  "c1": "#49d5f8",
+  "c2": "#49d5f8",
+  "c3": "#ff684d",
+  "font": "space-grotesk",
+  "glow": 20,
+  "letterEnabled": true,
+  "letterSpeed": 31,
+  "letterStagger": 0.1,
+  "letters": [
+    {
+      "fonts": [
+        "bodoni72",
+        "didot",
+        "libre-bodoni",
+        "fraunces"
+      ],
+      "rate": 1
+    },
+    {
+      "fonts": [
+        "space-grotesk",
+        "bodoni72-old",
+        "newsreader",
+        "didot"
+      ],
+      "rate": 0.72
+    },
+    {
+      "fonts": [
+        "libre-bodoni",
+        "bodoni72-smallcaps",
+        "palatino",
+        "space-grotesk"
+      ],
+      "rate": 1.25
+    },
+    {
+      "fonts": [
+        "bodoni72",
+        "didot",
+        "libre-bodoni",
+        "fraunces"
+      ],
+      "rate": 0.9
+    },
+    {
+      "fonts": [
+        "space-grotesk",
+        "bodoni72-old",
+        "newsreader",
+        "didot"
+      ],
+      "rate": 1
+    },
+    {
+      "fonts": [
+        "libre-bodoni",
+        "bodoni72-smallcaps",
+        "palatino",
+        "space-grotesk"
+      ],
+      "rate": 0.72
+    },
+    {
+      "fonts": [
+        "bodoni72",
+        "didot",
+        "libre-bodoni",
+        "fraunces"
+      ],
+      "rate": 1.25
+    },
+    {
+      "fonts": [
+        "space-grotesk",
+        "bodoni72-old",
+        "newsreader",
+        "didot"
+      ],
+      "rate": 0.9
+    },
+    {
+      "fonts": [
+        "libre-bodoni",
+        "bodoni72-smallcaps",
+        "palatino",
+        "space-grotesk"
+      ],
+      "rate": 1
+    },
+    {
+      "fonts": [
+        "bodoni72",
+        "didot",
+        "libre-bodoni",
+        "fraunces"
+      ],
+      "rate": 0.72
+    },
+    {
+      "fonts": [
+        "space-grotesk",
+        "bodoni72-old",
+        "newsreader",
+        "didot"
+      ],
+      "rate": 1.25
+    },
+    {
+      "fonts": [
+        "libre-bodoni",
+        "bodoni72-smallcaps",
+        "palatino",
+        "space-grotesk"
+      ],
+      "rate": 0.9
+    },
+    {
+      "fonts": [
+        "bodoni72",
+        "didot",
+        "libre-bodoni",
+        "fraunces"
+      ],
+      "rate": 1
+    },
+    {
+      "fonts": [
+        "space-grotesk",
+        "bodoni72-old",
+        "newsreader",
+        "didot"
+      ],
+      "rate": 0.72
+    }
+  ],
+  "mode": "aurora",
+  "size": 29,
+  "speed": 21,
+  "tracking": 4.25,
+  "weight": 800
+}
