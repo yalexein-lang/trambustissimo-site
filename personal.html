@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | Alessandro Guardascione</title>
+    <meta
+      name="description"
+      content="Software, sound, research interfaces, and digital experiments by Alessandro Guardascione."
+    />
+    <link rel="stylesheet" href="assets/portfolio.css?v=20260826d" />
+    <link rel="stylesheet" href="assets/projects-ribbon.css?v=20260829g" />
+    <link rel="stylesheet" href="assets/section-switcher.css?v=20260826d" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script src="content/projects-theme.js?v=20260826e"></script>
+  </head>
+  <body class="projects-ribbon-page section-projects-index">
+    <a class="skip-link" href="#projects-stage">Skip to projects</a>
+
+    <header class="site-switcher site-switcher--projects">
+      <a class="site-switcher__brand" href="index.html" aria-label="Alessandro Guardascione, home">
+        <span class="site-switcher__brand-full">Alessandro Guardascione</span><span class="site-switcher__brand-compact">AG</span>
+      </a>
+      <nav class="site-switcher__nav" aria-label="Main sections">
+        <a href="works.html"><span aria-hidden="true">01</span><span>Research</span></a>
+        <a href="personal.html" aria-current="page"><span aria-hidden="true">02</span><span>Projects</span></a>
+        <a href="mailto:alessandro.guardascione@outlook.com"><span aria-hidden="true">03</span><span>Contact</span></a>
+      </nav>
+    </header>
+
+    <header class="projects-header">
+      <div class="projects-header__statement">
+        <div class="projects-header__heading">
+          <span class="projects-header__eyebrow">Ongoing index</span>
+          <h1>Projects</h1>
+        </div>
+        <p class="projects-header__description">
+          An index of software, research interfaces, sound experiments, and prototypes developed by Alessandro Guardascione.
+        </p>
+      </div>
+    </header>
+
+    <main class="projects-main">
+      <section
+        class="projects-stage"
+        id="projects-stage"
+        aria-label="Selected personal projects"
+        tabindex="0"
+        data-projects-stage
+      >
+        <div class="projects-track" data-projects-track></div>
+      </section>
+      <span class="visually-hidden" aria-live="polite" data-project-audio-status></span>
+
+      <footer class="projects-rail">
+        <div class="projects-progress" aria-label="Project position">
+          <span data-project-range>01—08</span>
+          <span class="projects-progress__current" data-project-current>FEN · Research</span>
+          <span class="projects-progress__line" aria-hidden="true">
+            <span data-project-progress></span>
+          </span>
+          <span class="visually-hidden" aria-live="polite" data-project-status></span>
+        </div>
+        <nav class="projects-filters" aria-label="Filter projects">
+          <button type="button" data-project-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-project-filter="software" aria-pressed="false">Software</button>
+          <button type="button" data-project-filter="sound" aria-pressed="false">Sound</button>
+          <button type="button" data-project-filter="research" aria-pressed="false">Research</button>
+          <button type="button" data-project-filter="experiments" aria-pressed="false">Experiments</button>
+        </nav>
+      </footer>
+    </main>
+
+    <noscript>
+      <p class="projects-noscript">Enable JavaScript to use the visual project index.</p>
+    </noscript>
+    <script src="assets/projects-theme.js?v=20260826e"></script>
+    <script src="assets/projects-ribbon.js?v=20260829g" defer></script>
+  </body>
+</html>

@@ -1,0 +1,5725 @@
+{
+  "runtimeBinding": {
+    "artifactSha256": "1d5ee27f02f7d2b00178850a6f4979ae81d610f0b389e033766e401653582f0f",
+    "graphDigest": "0f52bafddaf09cf53d4f7137e22f2f622e8733dbde58a094ccb380596194bf2d",
+    "productId": "moog-eurorack-mavis-m4-patchbay-v0",
+    "productKey": "0f52bafddaf09cf53d4f7137e22f2f622e8733dbde58a094ccb380596194bf2d",
+    "releaseRelativePath": "releases/mavis/1d5ee27f02f7d2b00178850a6f4979ae81d610f0b389e033766e401653582f0f",
+    "sessionDigest": "3ece6b24fd985820657bbc21e65f6699a319c24fd0f7293242413fdebe0569f3"
+  },
+  "runtimeBindingDigest": "30884601f8d805e144de9f6365ecd74d698afc5a2bf0fce47bb0d6a1aa5ae849",
+  "schema": "instrument-surface-contract-v1",
+  "semantic": {
+    "actions": [],
+    "capabilities": {
+      "audioInputCount": 7,
+      "keyboard": {
+        "defaultCollapsedMobile": true,
+        "enabled": true,
+        "keyCount": 13,
+        "label": "PLAYABLE KEYBOARD · C–C",
+        "startNote": 60,
+        "velocity": 108
+      },
+      "midi": {
+        "actionMappingCount": 0,
+        "channelMode": "OMNI_IN_CHANNEL_1_OUT",
+        "controlMappingCount": 77,
+        "defaultChannel": 1,
+        "extensionLayer": "trambustissimo",
+        "feedback": {
+          "emitOn": [
+            "ui",
+            "preset",
+            "automation",
+            "state"
+          ],
+          "enabledByDefault": true,
+          "suppressIncomingOrigin": true
+        },
+        "nativeReferenceMappingCount": 0,
+        "noteInput": {
+          "enabled": true,
+          "forwardChannelPressure": true,
+          "forwardNoteOnOff": true,
+          "forwardPitchBend": true,
+          "forwardPolyPressure": true,
+          "ingressId": "live-midi"
+        },
+        "pageCount": 1,
+        "realtime": {
+          "clock": true,
+          "continue": true,
+          "enabled": true,
+          "forwardToProductWhenSupported": true,
+          "ingressId": "live-midi",
+          "start": true,
+          "stop": true
+        },
+        "referenceParityClaim": false
+      },
+      "patchStateEditor": true,
+      "patchbay": {
+        "inputCount": 16,
+        "jackCount": 28,
+        "jacks": [
+          {
+            "direction": "input",
+            "domain": "control",
+            "id": "fold-cv",
+            "label": "FOLD CV",
+            "law": "bipolar_fold_amount_modulation_summed_with_panel_fold_and_internal_expression_without_breaking_vco_audio_path",
+            "normal": null,
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "control",
+            "id": "1v-oct",
+            "label": "1V/OCT",
+            "law": "sum_1v_per_octave_with_pitch_keyboard_and_vco_modulation",
+            "normal": null,
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "control",
+            "id": "pwm",
+            "label": "PWM",
+            "law": "sum_with_pulse_width_and_pwm_amount",
+            "normal": null,
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "audio_dc",
+            "id": "one-minus5",
+            "label": "ONE (-5)",
+            "law": "mixer_channel_one_input_controlled_by_one_level",
+            "normal": {
+              "volts": -5
+            },
+            "volts": {
+              "maximum": 10,
+              "minimum": -10
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "control",
+            "id": "lfo-rate",
+            "label": "LFO RATE",
+            "law": "lfo_rate_control_voltage",
+            "normal": null,
+            "volts": {
+              "maximum": 5,
+              "minimum": -5,
+              "status": "clean_room_operational_range"
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "control",
+            "id": "cutoff",
+            "label": "CUTOFF",
+            "law": "sum_with_filter_cutoff_panel_and_vcf_mod_mix",
+            "normal": null,
+            "volts": {
+              "maximum": 5,
+              "minimum": -5,
+              "status": "clean_room_operational_range"
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "control",
+            "id": "gate",
+            "label": "GATE",
+            "law": "held_gate_triggers_eg_and_holds_sustain_until_low",
+            "normal": null,
+            "volts": {
+              "maximum": 10,
+              "minimum": 0,
+              "nominalOn": 5,
+              "offBelow": 1.5,
+              "onAbove": 3.5
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "control",
+            "id": "vca-cv",
+            "label": "VCA CV",
+            "law": "patched_external_vca_control_replaces_prepatched_eg_or_on_control",
+            "normal": {
+              "source": "vca-mode-selected-eg-or-on",
+              "status": "explicit_break_on_patch"
+            },
+            "volts": {
+              "maximum": 8,
+              "minimum": 0
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "audio_dc",
+            "id": "two",
+            "label": "TWO",
+            "law": "unity_mixer_channel_two_input",
+            "normal": null,
+            "volts": {
+              "maximum": 10,
+              "minimum": -10,
+              "status": "clean_room_operational_range"
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "audio_dc",
+            "id": "sample-hold-vco",
+            "label": "S+H VCO",
+            "law": "sample_source_replaces_vco_normal",
+            "normal": {
+              "source": "vco",
+              "status": "explicit_break_on_patch"
+            },
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "audio_dc",
+            "id": "sample-hold-gate-lfo",
+            "label": "S+H GATE/LFO",
+            "law": "rising_edge_sample_trigger_replaces_lfo_normal",
+            "normal": {
+              "source": "lfo",
+              "status": "explicit_break_on_patch"
+            },
+            "volts": {
+              "maximum": 5,
+              "minimum": 0
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "audio_dc",
+            "id": "atten-plus5",
+            "label": "ATTN (+5)",
+            "law": "attenuator_input_replaces_plus5_normal",
+            "normal": {
+              "volts": 5
+            },
+            "volts": {
+              "maximum": 10,
+              "minimum": -10
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "audio_dc",
+            "id": "mult",
+            "label": "MULT",
+            "law": "one_to_two_signal_fanout_input",
+            "normal": null,
+            "volts": {
+              "maximum": 10,
+              "minimum": -10,
+              "status": "clean_room_operational_range"
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "event",
+            "id": "lfo-sync",
+            "label": "LFO RESET",
+            "law": "rising_edge_resets_lfo_phase_when_mode_is_ext_reset_without_deriving_clock_period_or_rate",
+            "normal": null,
+            "volts": {
+              "maximum": 5,
+              "minimum": 0,
+              "nominalOn": 5
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "audio",
+            "id": "sub-in",
+            "label": "SUB IN",
+            "law": "patched_audio_replaces_internal_sub_oscillator_before_sub_level_and_main_filter",
+            "normal": {
+              "source": "sub-out",
+              "status": "explicit_break_on_patch"
+            },
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "input",
+            "domain": "control",
+            "id": "sub-cv",
+            "label": "SUB CV",
+            "law": "adds_to_sub_level_panel_and_clamps_to_unity",
+            "normal": null,
+            "volts": {
+              "maximum": 5,
+              "minimum": 0
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio",
+            "id": "r-vca",
+            "label": "R VCA",
+            "law": "vca_headphone_eurorack_output",
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "control",
+            "id": "kb-cv",
+            "label": "KB CV",
+            "law": "keyboard_cv_after_kb_scale_and_glide",
+            "volts": {
+              "maximum": 5,
+              "minimum": 0
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio_cv",
+            "id": "vco",
+            "label": "VCO",
+            "law": "vco_selected_morph_sine_triangle_output",
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio_cv",
+            "id": "sub-out",
+            "label": "SUB OUT",
+            "law": "selected_sub_wave_before_sub_level_and_sub_in_normal_break",
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio_dc",
+            "id": "one",
+            "label": "ONE",
+            "law": "mixer_channel_one_after_exponential_one_level_with_documented_output_headroom",
+            "volts": {
+              "maximum": 8,
+              "minimum": -8
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio_dc",
+            "id": "one-plus-two",
+            "label": "ONE+TWO",
+            "law": "sum_of_one_and_two_mixer_channels_with_documented_output_headroom",
+            "volts": {
+              "maximum": 8,
+              "minimum": -8
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio_cv",
+            "id": "lfo",
+            "label": "LFO",
+            "law": "lfo_selected_morph_sine_saw_output",
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "control",
+            "id": "eg",
+            "label": "EG",
+            "law": "adsr_envelope_control_output",
+            "volts": {
+              "maximum": 8,
+              "minimum": 0
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "control",
+            "id": "sample-hold",
+            "label": "S+H",
+            "law": "held_sample_value",
+            "volts": {
+              "maximum": 5,
+              "minimum": -5
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio_dc",
+            "id": "atten",
+            "label": "ATTN",
+            "law": "attenuator_output",
+            "volts": {
+              "maximum": 10,
+              "minimum": -10
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio_dc",
+            "id": "mult-1",
+            "label": "MULT 1",
+            "law": "first_copy_of_mult_input",
+            "volts": {
+              "maximum": 10,
+              "minimum": -10,
+              "status": "clean_room_operational_range"
+            }
+          },
+          {
+            "direction": "output",
+            "domain": "audio_dc",
+            "id": "mult-2",
+            "label": "MULT 2",
+            "law": "second_copy_of_mult_input",
+            "volts": {
+              "maximum": 10,
+              "minimum": -10,
+              "status": "clean_room_operational_range"
+            }
+          }
+        ],
+        "outputCount": 12,
+        "schema": "moog-patchbay-contract-v1"
+      },
+      "patternMemory": null,
+      "presets": {
+        "dynamicCatalog": true,
+        "factoryBank": true
+      },
+      "transport": {
+        "triggerMidiOnPlay": false
+      },
+      "view": {
+        "type": "compact-patch-synth"
+      }
+    },
+    "controls": [
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "amp-sat",
+        "label": "AMP SAT",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 10.0,
+        "format": "ms",
+        "id": "attack-ms",
+        "label": "ATTACK",
+        "maximum": 5500.0,
+        "minimum": 0.8,
+        "scale": "log"
+      },
+      {
+        "default": 0.5,
+        "format": "unit",
+        "id": "atten-level",
+        "label": "ATTN",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 250.0,
+        "format": "ms",
+        "id": "decay-ms",
+        "label": "DECAY",
+        "maximum": 18000.0,
+        "minimum": 3.0,
+        "scale": "log"
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "drift",
+        "label": "DRIFT",
+        "maximum": 0.5,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "bipolar",
+        "id": "env-curve",
+        "label": "ENV CURVE",
+        "maximum": 1.0,
+        "minimum": -1.0
+      },
+      {
+        "default": 1800.0,
+        "format": "hz",
+        "id": "filter-cutoff",
+        "label": "CUTOFF",
+        "maximum": 20000.0,
+        "minimum": 30.0,
+        "scale": "log"
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "filter-drive",
+        "label": "FILTER DRIVE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.15,
+        "format": "unit",
+        "id": "filter-resonance",
+        "label": "RESONANCE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.5,
+        "format": "unit",
+        "id": "fold-amount",
+        "label": "FOLD",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 1.0,
+        "format": "ratio",
+        "id": "fold-drive",
+        "label": "FOLD DRIVE",
+        "maximum": 2.0,
+        "minimum": 1.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "fx-delay",
+        "label": "DELAY",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.28,
+        "format": "unit",
+        "id": "fx-delay-age",
+        "label": "AGE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "choices": [
+          {
+            "label": "1/2 D",
+            "value": 0
+          },
+          {
+            "label": "1/2",
+            "value": 1
+          },
+          {
+            "label": "1/2 T",
+            "value": 2
+          },
+          {
+            "label": "1/4 D",
+            "value": 3
+          },
+          {
+            "label": "1/4",
+            "value": 4
+          },
+          {
+            "label": "1/4 T",
+            "value": 5
+          },
+          {
+            "label": "1/8 D",
+            "value": 6
+          },
+          {
+            "label": "1/8",
+            "value": 7
+          },
+          {
+            "label": "1/8 T",
+            "value": 8
+          },
+          {
+            "label": "1/16 D",
+            "value": 9
+          },
+          {
+            "label": "1/16",
+            "value": 10
+          },
+          {
+            "label": "1/16 T",
+            "value": 11
+          },
+          {
+            "label": "1/32 D",
+            "value": 12
+          },
+          {
+            "label": "1/32",
+            "value": 13
+          },
+          {
+            "label": "1/32 T",
+            "value": 14
+          }
+        ],
+        "default": 4.0,
+        "id": "fx-delay-division",
+        "label": "SYNC DIV",
+        "maximum": 14.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.3,
+        "format": "unit",
+        "id": "fx-delay-feedback",
+        "label": "FEEDBACK",
+        "maximum": 0.92,
+        "minimum": 0.0
+      },
+      {
+        "choices": [
+          {
+            "label": "FREE",
+            "value": 0
+          },
+          {
+            "label": "SYNC",
+            "value": 1
+          }
+        ],
+        "default": 0.0,
+        "id": "fx-delay-sync-mode",
+        "label": "MODE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 120.0,
+        "format": "bpm",
+        "id": "fx-delay-tempo-bpm",
+        "label": "SYNC BPM",
+        "maximum": 400.0,
+        "minimum": 20.0,
+        "scale": "log"
+      },
+      {
+        "default": 380.0,
+        "format": "ms",
+        "id": "fx-delay-time-ms",
+        "label": "FREE TIME",
+        "maximum": 1200.0,
+        "minimum": 55.0,
+        "scale": "log"
+      },
+      {
+        "default": 1.0,
+        "format": "ratio",
+        "id": "fx-delay-width",
+        "label": "WIDTH ×",
+        "maximum": 1.6,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.08,
+        "format": "unit",
+        "id": "fx-delay-wow",
+        "label": "WOW",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "fx-reverb",
+        "label": "REVERB",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 3.6,
+        "format": "seconds",
+        "id": "fx-reverb-decay-seconds",
+        "label": "DECAY · LINKED",
+        "maximum": 20.0,
+        "minimum": 0.4,
+        "scale": "log"
+      },
+      {
+        "default": 0.3,
+        "format": "ms",
+        "id": "fx-reverb-mod-depth-ms",
+        "label": "MOD DEPTH",
+        "maximum": 2.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.16,
+        "format": "hz",
+        "id": "fx-reverb-mod-rate-hz",
+        "label": "MOD RATE",
+        "maximum": 1.2,
+        "minimum": 0.02,
+        "scale": "log"
+      },
+      {
+        "default": 14.0,
+        "format": "ms",
+        "id": "fx-reverb-predelay-ms",
+        "label": "PREDELAY",
+        "maximum": 100.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.62,
+        "format": "unit",
+        "id": "fx-reverb-size",
+        "label": "SIZE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 1.2,
+        "format": "ratio",
+        "id": "fx-reverb-width",
+        "label": "WIDTH ×",
+        "maximum": 2.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "ms",
+        "id": "glide-ms",
+        "label": "GLIDE",
+        "maximum": 9000.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 620.0,
+        "format": "ms",
+        "id": "ignite-fall-ms",
+        "label": "IGNITE Fall",
+        "maximum": 5000.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "bipolar",
+        "id": "ignite-motion-depth",
+        "label": "IGNITE → FOLD",
+        "maximum": 1.0,
+        "minimum": -1.0
+      },
+      {
+        "default": 8.0,
+        "format": "ms",
+        "id": "ignite-rise-ms",
+        "label": "IGNITE Rise",
+        "maximum": 2000.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 1.0,
+        "format": "volts-per-octave-span",
+        "id": "kb-scale",
+        "label": "KB SCALE",
+        "maximum": 5.0,
+        "minimum": 1.0
+      },
+      {
+        "default": 0.0,
+        "format": "semitones",
+        "id": "keyboard-transpose-semitones",
+        "label": "TRANSPOSE",
+        "maximum": 24.0,
+        "minimum": -24.0,
+        "quantize": 1
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-0",
+        "label": "C4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-1",
+        "label": "C♯4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-10",
+        "label": "A♯4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-11",
+        "label": "B4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-12",
+        "label": "C5 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-2",
+        "label": "D4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-3",
+        "label": "D♯4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-4",
+        "label": "E4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-5",
+        "label": "F4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-6",
+        "label": "F♯4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-7",
+        "label": "G4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-8",
+        "label": "G♯4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "keyboard-tune-cents-9",
+        "label": "A4 TUNE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 2.0,
+        "format": "hz",
+        "id": "lfo-rate-hz",
+        "label": "LFO RATE",
+        "maximum": 550.0,
+        "minimum": 0.1,
+        "scale": "log"
+      },
+      {
+        "choices": [
+          {
+            "label": "LOOP",
+            "value": 0
+          },
+          {
+            "label": "ONE SHOT",
+            "value": 1
+          }
+        ],
+        "default": 0.0,
+        "id": "lfo-run-mode",
+        "label": "LFO RUN",
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "quantize": 1
+      },
+      {
+        "choices": [
+          {
+            "label": "1/32",
+            "value": 0
+          },
+          {
+            "label": "1/16",
+            "value": 1
+          },
+          {
+            "label": "1/8",
+            "value": 2
+          },
+          {
+            "label": "1/4",
+            "value": 3
+          },
+          {
+            "label": "1/2",
+            "value": 4
+          },
+          {
+            "label": "1 BAR",
+            "value": 5
+          },
+          {
+            "label": "2 BAR",
+            "value": 6
+          },
+          {
+            "label": "4 BAR",
+            "value": 7
+          }
+        ],
+        "default": 3.0,
+        "id": "lfo-sync-division",
+        "label": "HOST DIV",
+        "maximum": 7.0,
+        "minimum": 0.0
+      },
+      {
+        "choices": [
+          {
+            "label": "HOST",
+            "value": 0
+          },
+          {
+            "label": "EXT RESET",
+            "value": 1
+          },
+          {
+            "label": "FREE",
+            "value": 2
+          }
+        ],
+        "default": 2.0,
+        "id": "lfo-sync-mode",
+        "label": "LFO MODE",
+        "maximum": 2.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "lfo-sync-phase",
+        "label": "SYNC PHASE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "lfo-wave",
+        "label": "LFO MORPH · TRI↔SQUARE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "choices": [
+          {
+            "label": "TRI↔SQUARE",
+            "value": 0
+          },
+          {
+            "label": "SINE",
+            "value": 1
+          },
+          {
+            "label": "SAW",
+            "value": 2
+          }
+        ],
+        "default": 0.0,
+        "id": "lfo-wave-mode",
+        "label": "LFO SOURCE",
+        "maximum": 2.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.5,
+        "format": "unit",
+        "id": "one-level",
+        "label": "ONE LVL",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.8,
+        "format": "unit",
+        "id": "output-level",
+        "label": "VOLUME",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.5,
+        "format": "unit",
+        "id": "pulse-width",
+        "label": "PULSE WIDTH",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "pwm-mod-depth",
+        "label": "PWM AMT",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 500.0,
+        "format": "ms",
+        "id": "release-ms",
+        "label": "RELEASE",
+        "maximum": 18000.0,
+        "minimum": 3.0,
+        "scale": "log"
+      },
+      {
+        "default": 0.0,
+        "format": "cents",
+        "id": "sub-fine-cents",
+        "label": "SUB FINE",
+        "maximum": 100.0,
+        "minimum": -100.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "sub-level",
+        "label": "SUB LEVEL",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "choices": [
+          {
+            "label": "-3 OCT",
+            "value": -3
+          },
+          {
+            "label": "-2 OCT",
+            "value": -2
+          },
+          {
+            "label": "-1 OCT",
+            "value": -1
+          },
+          {
+            "label": "UNISON",
+            "value": 0
+          }
+        ],
+        "default": -1.0,
+        "id": "sub-octave",
+        "label": "SUB OCT",
+        "maximum": 0.0,
+        "minimum": -3.0,
+        "quantize": 1
+      },
+      {
+        "default": 0.5,
+        "format": "unit",
+        "id": "sub-pulse-width",
+        "label": "SUB WIDTH",
+        "maximum": 0.5,
+        "minimum": 0.1
+      },
+      {
+        "choices": [
+          {
+            "label": "SYNC",
+            "value": 0
+          },
+          {
+            "label": "FREE",
+            "value": 1
+          }
+        ],
+        "default": 1.0,
+        "id": "sub-sync-mode",
+        "label": "SUB SYNC",
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "quantize": 1
+      },
+      {
+        "default": 0.0,
+        "format": "semitones",
+        "id": "sub-transpose-semitones",
+        "label": "SUB INTERVAL",
+        "maximum": 11.0,
+        "minimum": -11.0,
+        "quantize": 1
+      },
+      {
+        "choices": [
+          {
+            "label": "SINE",
+            "value": 0
+          },
+          {
+            "label": "TRIANGLE",
+            "value": 1
+          },
+          {
+            "label": "SAW",
+            "value": 2
+          },
+          {
+            "label": "PULSE",
+            "value": 3
+          },
+          {
+            "label": "SINE+TRI",
+            "value": 4
+          },
+          {
+            "label": "SINE+SAW",
+            "value": 5
+          },
+          {
+            "label": "TRI+PULSE",
+            "value": 6
+          },
+          {
+            "label": "SAW+PULSE",
+            "value": 7
+          }
+        ],
+        "default": 0.0,
+        "id": "sub-wave",
+        "label": "SUB WAVE",
+        "maximum": 7.0,
+        "minimum": 0.0,
+        "quantize": 1
+      },
+      {
+        "default": 0.7,
+        "format": "unit",
+        "id": "sustain",
+        "label": "SUSTAIN",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "tolerance",
+        "label": "TOLERANCE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "choices": [
+          {
+            "label": "EG",
+            "value": 0
+          },
+          {
+            "label": "ON",
+            "value": 1
+          }
+        ],
+        "default": 0.0,
+        "id": "vca-mode",
+        "label": "VCA MODE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "bipolar",
+        "id": "vcf-mod-depth",
+        "label": "VCF MOD AMT",
+        "maximum": 1.0,
+        "minimum": -1.0
+      },
+      {
+        "default": 0.5,
+        "format": "unit",
+        "id": "vcf-mod-mix",
+        "label": "VCF MOD MIX · EG↔LFO",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 261.6255653005986,
+        "format": "hz",
+        "id": "vco-frequency-hz",
+        "label": "VCO PITCH",
+        "maximum": 8000.0,
+        "minimum": 8.0,
+        "scale": "log"
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "vco-mod-depth",
+        "label": "PITCH MOD AMT",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.5,
+        "format": "unit",
+        "id": "vco-mod-mix",
+        "label": "VCO MOD MIX · EG↔LFO",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "vco-wave",
+        "label": "VCO MORPH · SAW↔PULSE",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "choices": [
+          {
+            "label": "SAW↔PULSE",
+            "value": 0
+          },
+          {
+            "label": "SINE",
+            "value": 1
+          },
+          {
+            "label": "TRIANGLE",
+            "value": 2
+          }
+        ],
+        "default": 0.0,
+        "id": "vco-wave-mode",
+        "label": "VCO SOURCE",
+        "maximum": 2.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "unit",
+        "id": "velocity-amp",
+        "label": "VEL → AMP",
+        "maximum": 1.0,
+        "minimum": 0.0
+      },
+      {
+        "default": 0.0,
+        "format": "bipolar",
+        "id": "velocity-filter",
+        "label": "VEL → FILTER",
+        "maximum": 0.5,
+        "minimum": -0.5
+      }
+    ],
+    "groups": [
+      {
+        "controls": [
+          "fold-amount",
+          "one-level",
+          "atten-level",
+          "kb-scale",
+          "glide-ms"
+        ],
+        "id": "utilities",
+        "label": "UTL"
+      },
+      {
+        "controls": [
+          "vco-frequency-hz",
+          "vco-wave-mode",
+          "vco-wave",
+          "pulse-width",
+          "vco-mod-mix",
+          "vco-mod-depth",
+          "pwm-mod-depth"
+        ],
+        "id": "oscillator",
+        "label": "VCO"
+      },
+      {
+        "controls": [
+          "sub-level",
+          "sub-octave",
+          "sub-transpose-semitones",
+          "sub-fine-cents",
+          "sub-sync-mode",
+          "sub-wave",
+          "sub-pulse-width"
+        ],
+        "id": "sub-oscillator",
+        "label": "SUB"
+      },
+      {
+        "controls": [
+          "filter-cutoff",
+          "vcf-mod-mix",
+          "vcf-mod-depth",
+          "filter-resonance"
+        ],
+        "id": "filter",
+        "label": "VCF"
+      },
+      {
+        "controls": [
+          "vca-mode",
+          "output-level"
+        ],
+        "id": "dynamics",
+        "label": "VCA"
+      },
+      {
+        "controls": [
+          "lfo-rate-hz",
+          "lfo-wave-mode",
+          "lfo-wave",
+          "lfo-run-mode"
+        ],
+        "id": "lfo",
+        "label": "LFO"
+      },
+      {
+        "controls": [
+          "attack-ms",
+          "decay-ms",
+          "sustain",
+          "release-ms",
+          "env-curve"
+        ],
+        "id": "envelope",
+        "label": "EG"
+      },
+      {
+        "controls": [
+          "drift",
+          "tolerance",
+          "filter-drive",
+          "fold-drive",
+          "amp-sat",
+          "velocity-amp",
+          "velocity-filter",
+          "ignite-motion-depth",
+          "ignite-rise-ms",
+          "ignite-fall-ms",
+          "lfo-sync-mode",
+          "lfo-sync-division",
+          "lfo-sync-phase"
+        ],
+        "id": "extension",
+        "label": "Product Extension"
+      },
+      {
+        "controls": [
+          "keyboard-transpose-semitones",
+          "keyboard-tune-cents-0",
+          "keyboard-tune-cents-1",
+          "keyboard-tune-cents-2",
+          "keyboard-tune-cents-3",
+          "keyboard-tune-cents-4",
+          "keyboard-tune-cents-5",
+          "keyboard-tune-cents-6",
+          "keyboard-tune-cents-7",
+          "keyboard-tune-cents-8",
+          "keyboard-tune-cents-9",
+          "keyboard-tune-cents-10",
+          "keyboard-tune-cents-11",
+          "keyboard-tune-cents-12"
+        ],
+        "id": "keyboard-tuning",
+        "label": "KEYBOARD TUNING"
+      },
+      {
+        "controls": [
+          "fx-delay",
+          "fx-reverb",
+          "fx-delay-sync-mode",
+          "fx-delay-time-ms",
+          "fx-delay-tempo-bpm",
+          "fx-delay-division",
+          "fx-delay-feedback",
+          "fx-delay-age",
+          "fx-delay-wow",
+          "fx-delay-width",
+          "fx-reverb-predelay-ms",
+          "fx-reverb-size",
+          "fx-reverb-decay-seconds",
+          "fx-reverb-mod-rate-hz",
+          "fx-reverb-mod-depth-ms",
+          "fx-reverb-width"
+        ],
+        "id": "family-fx",
+        "label": "FX"
+      }
+    ],
+    "macros": [
+      {
+        "absolute": true,
+        "default": 0.5,
+        "id": "tone",
+        "label": "TONE",
+        "signature": false,
+        "targets": [
+          {
+            "controlId": "filter-cutoff",
+            "mapping": "log",
+            "maximum": 11888.232673127191,
+            "minimum": 84.90761720331633
+          },
+          {
+            "controlId": "filter-resonance",
+            "mapping": "linear",
+            "maximum": 0.72,
+            "minimum": 0.06
+          }
+        ]
+      },
+      {
+        "absolute": true,
+        "default": 0.24,
+        "id": "motion",
+        "label": "MOTION",
+        "signature": false,
+        "targets": [
+          {
+            "controlId": "lfo-rate-hz",
+            "mapping": "log",
+            "maximum": 24.0,
+            "minimum": 0.1
+          },
+          {
+            "controlId": "vco-mod-depth",
+            "mapping": "linear",
+            "maximum": 0.78,
+            "minimum": 0.0
+          },
+          {
+            "controlId": "vcf-mod-depth",
+            "mapping": "linear",
+            "maximum": 0.78,
+            "minimum": 0.0
+          }
+        ]
+      },
+      {
+        "absolute": true,
+        "default": 0.35,
+        "id": "fold",
+        "label": "FOLD",
+        "signature": false,
+        "targets": [
+          {
+            "controlId": "fold-amount",
+            "mapping": "linear",
+            "maximum": 1.0,
+            "minimum": 0.0
+          }
+        ]
+      },
+      {
+        "absolute": true,
+        "default": 0.32,
+        "id": "envelope",
+        "label": "ENVELOPE",
+        "signature": false,
+        "targets": [
+          {
+            "controlId": "attack-ms",
+            "mapping": "log",
+            "maximum": 500.0,
+            "minimum": 1.0
+          },
+          {
+            "controlId": "decay-ms",
+            "mapping": "log",
+            "maximum": 2200.0,
+            "minimum": 45.0
+          },
+          {
+            "controlId": "release-ms",
+            "mapping": "log",
+            "maximum": 3200.0,
+            "minimum": 70.0
+          }
+        ]
+      },
+      {
+        "absolute": true,
+        "default": 0.18,
+        "id": "drive",
+        "label": "DRIVE",
+        "signature": false,
+        "targets": [
+          {
+            "controlId": "filter-drive",
+            "mapping": "linear",
+            "maximum": 0.8,
+            "minimum": 0.0
+          }
+        ]
+      },
+      {
+        "absolute": true,
+        "default": 0.66,
+        "id": "level",
+        "label": "LEVEL",
+        "signature": false,
+        "targets": [
+          {
+            "controlId": "output-level",
+            "mapping": "linear",
+            "maximum": 1.0,
+            "minimum": 0.3
+          }
+        ]
+      },
+      {
+        "absolute": true,
+        "default": 0.0,
+        "id": "ignite",
+        "label": "IGNITE",
+        "signature": true,
+        "targets": [
+          {
+            "controlId": "fold-amount",
+            "mapping": "linear",
+            "maximum": 1.0,
+            "minimum": 0.5
+          },
+          {
+            "controlId": "fold-drive",
+            "mapping": "linear",
+            "maximum": 2.0,
+            "minimum": 1.0
+          },
+          {
+            "controlId": "filter-drive",
+            "mapping": "linear",
+            "maximum": 0.95,
+            "minimum": 0.0
+          },
+          {
+            "controlId": "filter-resonance",
+            "mapping": "linear",
+            "maximum": 0.92,
+            "minimum": 0.15
+          },
+          {
+            "controlId": "vcf-mod-depth",
+            "mapping": "linear",
+            "maximum": 1.0,
+            "minimum": 0.35
+          },
+          {
+            "controlId": "output-level",
+            "mapping": "linear",
+            "maximum": 0.95,
+            "minimum": 0.8
+          },
+          {
+            "controlId": "ignite-motion-depth",
+            "mapping": "linear",
+            "maximum": 0.85,
+            "minimum": 0.0
+          },
+          {
+            "controlId": "ignite-fall-ms",
+            "mapping": "linear",
+            "maximum": 90.0,
+            "minimum": 620.0
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Pluck",
+        "description": "Immediate warm mono pluck for single-note playing and velocity articulation.",
+        "id": "ember-pluck",
+        "label": "Classic Pluck"
+      },
+      {
+        "category": "Bass",
+        "description": "Deep stable sub-supported bass with restrained harmonics and short glide.",
+        "id": "copper-bass",
+        "label": "Deep Sub Bass"
+      },
+      {
+        "category": "Bass",
+        "description": "Elastic resonant bass for funk-style velocity phrasing.",
+        "id": "rubber-filter",
+        "label": "Rubber Bass"
+      },
+      {
+        "category": "Strings",
+        "description": "Slow PWM string voice with long release and gentle movement.",
+        "id": "midnight-pwm",
+        "label": "PWM Strings"
+      },
+      {
+        "category": "Pad",
+        "description": "Warm evolving pad with subtle analogue drift and broad sustain.",
+        "id": "slow-tide",
+        "label": "Warm Pad"
+      },
+      {
+        "category": "Pluck",
+        "description": "Bright folded glass pluck with long but controlled tail.",
+        "id": "random-glint",
+        "label": "Glass Pluck"
+      },
+      {
+        "category": "Bass",
+        "description": "Solid pulse/sub bass designed to sit under a mix.",
+        "id": "random-pulse",
+        "label": "Solid Pulse Bass"
+      },
+      {
+        "category": "Lead",
+        "description": "Expressive singing lead with controlled vibrato and portamento.",
+        "id": "silk-vibrato",
+        "label": "Singing Lead"
+      },
+      {
+        "category": "Keys",
+        "description": "Soft velocity-responsive mono keys with neutral modulation.",
+        "id": "broken-clock",
+        "label": "Soft Keys"
+      },
+      {
+        "category": "Lead",
+        "description": "Portamento lead for melodic lines with restrained vibrato.",
+        "id": "dual-motion",
+        "label": "Portamento Lead"
+      },
+      {
+        "category": "Lead",
+        "description": "Open harmonically rich lead without automatic sequencing.",
+        "id": "scatter-motion",
+        "label": "Open Saw Lead"
+      },
+      {
+        "category": "Bass",
+        "description": "Compact folded bass using the sub layer as extra body.",
+        "id": "parallel-fold",
+        "label": "Folded Bass"
+      },
+      {
+        "category": "Pluck",
+        "description": "Folded bell-like pluck for melodic accents.",
+        "id": "fold-bell",
+        "label": "Fold Bell"
+      },
+      {
+        "category": "Drone",
+        "description": "Warm sustaining drone with slow PWM and subtle instability.",
+        "id": "fold-drone",
+        "label": "Warm Drone"
+      },
+      {
+        "category": "Keys",
+        "description": "Pulse keys with gentle PWM movement and medium release.",
+        "id": "tremolo-wire",
+        "label": "Pulse Keys"
+      },
+      {
+        "category": "Arp",
+        "description": "Acid-style resonant sequence preset with authored ARP pattern.",
+        "id": "gate-pulse",
+        "label": "Acid Sequence"
+      },
+      {
+        "category": "Pad",
+        "description": "Slow blooming pad for held notes and wide expressive sweeps.",
+        "id": "offset-bloom",
+        "label": "Bloom Pad"
+      },
+      {
+        "category": "Init",
+        "description": "Neutral starting point for manual sound design.",
+        "id": "envelope-vca",
+        "label": "Init Mono"
+      },
+      {
+        "category": "Arp",
+        "description": "Resonant downward-moving ARP suitable for simple held chords.",
+        "id": "audio-fm-filter",
+        "label": "Resonant Arp"
+      },
+      {
+        "category": "Arp",
+        "description": "Swinging musical ARP with slower envelope and keyboard performance control.",
+        "id": "breathing-rate",
+        "label": "Swing Arp"
+      }
+    ],
+    "product": {
+      "appId": "trambustissimo.compact-patch-synth",
+      "label": "Compact Patch Synth",
+      "productId": "moog-eurorack-mavis-m4-patchbay-v0",
+      "referenceContext": "Original Trambustissimo instrument shaped by classic patchable analog workflows and rebuilt for standalone/AUv3 performance. PLICATA replaces hardware-oriented responsibilities where they do not make sense in software; its dedicated FOLD CV input modulates the internal wavefolder without replacing the oscillator audio path.",
+      "subtitle": "Single analog-style voice · interval SUB oscillator · audio-rate LFO · ADSR · ladder filter · CV-modulated wavefolder · PLICATA patch system"
+    },
+    "schema": "instrument-surface-contract-v1",
+    "surfaceApi": {
+      "commandIds": [],
+      "endpointIds": [
+        "control.amp-sat",
+        "control.attack-ms",
+        "control.atten-level",
+        "control.decay-ms",
+        "control.drift",
+        "control.env-curve",
+        "control.filter-cutoff",
+        "control.filter-drive",
+        "control.filter-resonance",
+        "control.fold-amount",
+        "control.fold-drive",
+        "control.fx-delay",
+        "control.fx-delay-age",
+        "control.fx-delay-division",
+        "control.fx-delay-feedback",
+        "control.fx-delay-sync-mode",
+        "control.fx-delay-tempo-bpm",
+        "control.fx-delay-time-ms",
+        "control.fx-delay-width",
+        "control.fx-delay-wow",
+        "control.fx-reverb",
+        "control.fx-reverb-decay-seconds",
+        "control.fx-reverb-mod-depth-ms",
+        "control.fx-reverb-mod-rate-hz",
+        "control.fx-reverb-predelay-ms",
+        "control.fx-reverb-size",
+        "control.fx-reverb-width",
+        "control.glide-ms",
+        "control.ignite-fall-ms",
+        "control.ignite-motion-depth",
+        "control.ignite-rise-ms",
+        "control.kb-scale",
+        "control.keyboard-transpose-semitones",
+        "control.keyboard-tune-cents-0",
+        "control.keyboard-tune-cents-1",
+        "control.keyboard-tune-cents-10",
+        "control.keyboard-tune-cents-11",
+        "control.keyboard-tune-cents-12",
+        "control.keyboard-tune-cents-2",
+        "control.keyboard-tune-cents-3",
+        "control.keyboard-tune-cents-4",
+        "control.keyboard-tune-cents-5",
+        "control.keyboard-tune-cents-6",
+        "control.keyboard-tune-cents-7",
+        "control.keyboard-tune-cents-8",
+        "control.keyboard-tune-cents-9",
+        "control.lfo-rate-hz",
+        "control.lfo-run-mode",
+        "control.lfo-sync-division",
+        "control.lfo-sync-mode",
+        "control.lfo-sync-phase",
+        "control.lfo-wave",
+        "control.lfo-wave-mode",
+        "control.one-level",
+        "control.output-level",
+        "control.pulse-width",
+        "control.pwm-mod-depth",
+        "control.release-ms",
+        "control.sub-fine-cents",
+        "control.sub-level",
+        "control.sub-octave",
+        "control.sub-pulse-width",
+        "control.sub-sync-mode",
+        "control.sub-transpose-semitones",
+        "control.sub-wave",
+        "control.sustain",
+        "control.tolerance",
+        "control.vca-mode",
+        "control.vcf-mod-depth",
+        "control.vcf-mod-mix",
+        "control.vco-frequency-hz",
+        "control.vco-mod-depth",
+        "control.vco-mod-mix",
+        "control.vco-wave",
+        "control.vco-wave-mode",
+        "control.velocity-amp",
+        "control.velocity-filter",
+        "macro.drive",
+        "macro.envelope",
+        "macro.fold",
+        "macro.ignite",
+        "macro.level",
+        "macro.motion",
+        "macro.tone"
+      ],
+      "hostCapabilities": [
+        "preset.list",
+        "preset.load",
+        "product.generate",
+        "patch.edit",
+        "keyboard.note"
+      ]
+    }
+  },
+  "semanticDigest": "417aa6fdd4c407bac7f6de0cde9d433c68230b569e404544e0b6d49d051f46f8",
+  "sourceEvidence": {
+    "artifactManifestSha256": "9a55dfcbc9e17f04bb6db72245604fa1227c0aa0c0292e0788165085efcf79a4",
+    "currentSha256": "4280d020e67f481398003d0be35d2527e54142a82e43581e52e7db674effae8f",
+    "graphSha256": "130767d0b074b4724cf6f809151c8df67717fd648a759e26bbdbb7c2094404dd",
+    "midiMapSha256": "61a0584b9dcf4fe61d830e433ce4f5ebd61c7a210e75709b04801cb21c394ae3",
+    "patchbaySha256": "f9a987e285d6b3afd71628d892ae78b3c6c3a6da946a98b341d907ffe67e62e1",
+    "presetCatalogSha256": "eb09a1b9df308a79d538fff2017aac19d06fb46cb032d9d3da7c9b1676e35cfc",
+    "productContractSha256": "4243046e1f212ca05b2bfbc2c47d349d57f699fc5dfe277a85ac409478f847fa",
+    "standaloneConfigSha256": "10d0cfb6c9042e1ac9bcd2255890482117b05b1ca05c87c3ca519907f8d26c59"
+  },
+  "visualPresetStates": {
+    "audio-fm-filter": {
+      "category": "Arp",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 3.0,
+        "atten-level": 0.5,
+        "decay-ms": 390.0,
+        "drift": 0.0,
+        "env-curve": -0.22,
+        "filter-cutoff": 597.1992801350448,
+        "filter-drive": 0.14,
+        "filter-resonance": 0.38,
+        "fold-amount": 0.2,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.64,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 300.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.4,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.18,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 116.541,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.2,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.0,
+        "velocity-filter": 0.0
+      },
+      "label": "Resonant Arp",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 118.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": true,
+          "fixedVelocity": 104,
+          "gate": 0.66,
+          "hold": false,
+          "octaveProbability": 0.75,
+          "octaves": 2,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 1,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 8
+            },
+            {
+              "enabled": false,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": -2,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 0.9,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 1433,
+          "style": "DOWN",
+          "swing": 0.12,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "breathing-rate": {
+      "category": "Arp",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 26.0,
+        "atten-level": 0.5,
+        "decay-ms": 760.0,
+        "drift": 0.0,
+        "env-curve": 0.0,
+        "filter-cutoff": 826.6367570164504,
+        "filter-drive": 0.0,
+        "filter-resonance": 0.2,
+        "fold-amount": 0.1,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 70.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 0.4,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.18,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.64,
+        "pulse-width": 0.43,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 680.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.6,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.08,
+        "vcf-mod-mix": 1.0,
+        "vco-frequency-hz": 293.665,
+        "vco-mod-depth": 0.014,
+        "vco-mod-mix": 1.0,
+        "vco-wave": 0.72,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.2,
+        "velocity-filter": 0.0
+      },
+      "label": "Swing Arp",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "lfo",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 106.0,
+          "clockMode": "INTERNAL",
+          "division": "1/8",
+          "enabled": true,
+          "fixedVelocity": 104,
+          "gate": 0.82,
+          "hold": false,
+          "octaveProbability": 0.75,
+          "octaves": 2,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 8
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.08,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": false,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 1,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 0.92,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 1450,
+          "style": "UP_DOWN",
+          "swing": 0.45,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          },
+          {
+            "endpointId": "arp.swing",
+            "mapping": "linear",
+            "maximum": 0.65,
+            "minimum": 0.0
+          }
+        ]
+      }
+    },
+    "broken-clock": {
+      "category": "Keys",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 16.0,
+        "atten-level": 0.5,
+        "decay-ms": 650.0,
+        "drift": 0.0,
+        "env-curve": 0.04,
+        "filter-cutoff": 941.4405217954704,
+        "filter-drive": 0.04,
+        "filter-resonance": 0.13,
+        "fold-amount": 0.08,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.66,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 720.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.68,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 220.0,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.48,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.34,
+        "velocity-filter": 0.1
+      },
+      "label": "Soft Keys",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "copper-bass": {
+      "category": "Bass",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 4.0,
+        "atten-level": 0.5,
+        "decay-ms": 460.0,
+        "drift": 0.0,
+        "env-curve": -0.18,
+        "filter-cutoff": 240.31011530482996,
+        "filter-drive": 0.12,
+        "filter-resonance": 0.16,
+        "fold-amount": 0.06,
+        "fold-drive": 1.08,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 38.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.72,
+        "pulse-width": 0.52,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 260.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.54,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.72,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.22,
+        "vcf-mod-mix": 0.0,
+        "vco-frequency-hz": 82.4069,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.58,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.26,
+        "velocity-filter": 0.08
+      },
+      "label": "Deep Sub Bass",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "dual-motion": {
+      "category": "Lead",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 8.0,
+        "atten-level": 0.5,
+        "decay-ms": 520.0,
+        "drift": 0.0,
+        "env-curve": 0.0,
+        "filter-cutoff": 1390.6806499254092,
+        "filter-drive": 0.08,
+        "filter-resonance": 0.22,
+        "fold-amount": 0.16,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 170.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 4.6,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.3,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.67,
+        "pulse-width": 0.54,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 390.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.76,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.08,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 146.832,
+        "vco-mod-depth": 0.02,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.72,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.2,
+        "velocity-filter": 0.0
+      },
+      "label": "Portamento Lead",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-audio",
+            "source": "lfo",
+            "target": "atten-plus5"
+          },
+          {
+            "kind": "internal-dynamic-control",
+            "source": "atten",
+            "target": "1v-oct"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "ember-pluck": {
+      "category": "Pluck",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 2.0,
+        "atten-level": 0.5,
+        "decay-ms": 240.0,
+        "drift": 0.0,
+        "env-curve": -0.32,
+        "filter-cutoff": 1390.6806499254092,
+        "filter-drive": 0.05,
+        "filter-resonance": 0.14,
+        "fold-amount": 0.14,
+        "fold-drive": 1.08,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.69,
+        "pulse-width": 0.47,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 210.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.18,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.3,
+        "vcf-mod-mix": 0.0,
+        "vco-frequency-hz": 261.6255653005986,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.22,
+        "vco-wave-mode": 1.0,
+        "velocity-amp": 0.38,
+        "velocity-filter": 0.14
+      },
+      "label": "Classic Pluck",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "envelope-vca": {
+      "category": "Init",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 5.0,
+        "atten-level": 0.5,
+        "decay-ms": 500.0,
+        "drift": 0.0,
+        "env-curve": 0.0,
+        "filter-cutoff": 2496.773800965094,
+        "filter-drive": 0.0,
+        "filter-resonance": 0.08,
+        "fold-amount": 0.0,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.66,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 420.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.72,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 261.6256,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.5,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.18,
+        "velocity-filter": 0.0
+      },
+      "label": "Init Mono",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "fold-bell": {
+      "category": "Pluck",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 4.0,
+        "atten-level": 0.5,
+        "decay-ms": 840.0,
+        "drift": 0.0,
+        "env-curve": -0.36,
+        "filter-cutoff": 3238.4377115116836,
+        "filter-drive": 0.12,
+        "filter-resonance": 0.32,
+        "fold-amount": 0.68,
+        "fold-drive": 1.62,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.6,
+        "pulse-width": 0.62,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 980.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.1,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 523.251,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.44,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.36,
+        "velocity-filter": 0.14
+      },
+      "label": "Fold Bell",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "fold-cv"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "fold-drone": {
+      "category": "Drone",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 120.0,
+        "atten-level": 0.5,
+        "decay-ms": 1200.0,
+        "drift": 0.12,
+        "env-curve": 0.3,
+        "filter-cutoff": 491.36250517854324,
+        "filter-drive": 0.08,
+        "filter-resonance": 0.14,
+        "fold-amount": 0.16,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 0.18,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.62,
+        "pulse-width": 0.44,
+        "pwm-mod-depth": 0.1,
+        "release-ms": 2400.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.3,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.42,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 7.0,
+        "sub-wave": 1.0,
+        "sustain": 0.9,
+        "tolerance": 0.1,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 130.8128,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.82,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.0,
+        "velocity-filter": 0.0
+      },
+      "label": "Warm Drone",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "lfo",
+            "target": "pwm"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "gate-pulse": {
+      "category": "Arp",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 2.0,
+        "atten-level": 0.5,
+        "decay-ms": 280.0,
+        "drift": 0.0,
+        "env-curve": -0.34,
+        "filter-cutoff": 404.2823217079863,
+        "filter-drive": 0.18,
+        "filter-resonance": 0.48,
+        "fold-amount": 0.5,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.65,
+        "pulse-width": 0.39,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 170.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.2,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.26,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 3.0,
+        "sustain": 0.36,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.42,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 110.0,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.82,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.0,
+        "velocity-filter": 0.0
+      },
+      "label": "Acid Sequence",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 18,
+          "bpm": 122.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": true,
+          "fixedVelocity": 104,
+          "gate": 0.62,
+          "hold": false,
+          "octaveProbability": 0.75,
+          "octaves": 2,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 8
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": -0.08,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": false,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 12
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 1,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 1382,
+          "style": "UP_DOWN",
+          "swing": 0.18,
+          "velocityMode": "ACCENT"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          },
+          {
+            "endpointId": "arp.probability",
+            "mapping": "linear",
+            "maximum": 0.55,
+            "minimum": 1.0
+          }
+        ]
+      }
+    },
+    "midnight-pwm": {
+      "category": "Strings",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 420.0,
+        "atten-level": 0.5,
+        "decay-ms": 1350.0,
+        "drift": 0.0,
+        "env-curve": 0.28,
+        "filter-cutoff": 774.5966692414834,
+        "filter-drive": 0.03,
+        "filter-resonance": 0.12,
+        "fold-amount": 0.5,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 55.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 0.28,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.76,
+        "lfo-wave-mode": 1.0,
+        "one-level": 0.5,
+        "output-level": 0.62,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.36,
+        "release-ms": 2200.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.1,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.36,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 5.0,
+        "sustain": 0.84,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 174.614,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.92,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.16,
+        "velocity-filter": 0.0
+      },
+      "label": "PWM Strings",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "lfo",
+            "target": "pwm"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "offset-bloom": {
+      "category": "Pad",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 560.0,
+        "atten-level": 0.5,
+        "decay-ms": 1450.0,
+        "drift": 0.08,
+        "env-curve": 0.38,
+        "filter-cutoff": 524.3739405670516,
+        "filter-drive": 0.0,
+        "filter-resonance": 0.16,
+        "fold-amount": 0.14,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.61,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 2400.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.82,
+        "tolerance": 0.06,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.06,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 207.652,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.36,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.14,
+        "velocity-filter": 0.0
+      },
+      "label": "Bloom Pad",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "lfo",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "parallel-fold": {
+      "category": "Bass",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 3.0,
+        "atten-level": 0.5,
+        "decay-ms": 370.0,
+        "drift": 0.0,
+        "env-curve": -0.2,
+        "filter-cutoff": 378.8311337115972,
+        "filter-drive": 0.12,
+        "filter-resonance": 0.18,
+        "fold-amount": 0.46,
+        "fold-drive": 1.36,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.66,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 250.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.26,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.54,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 92.499,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.24,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.0,
+        "velocity-filter": 0.0
+      },
+      "label": "Folded Bass",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "fold-cv"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "random-glint": {
+      "category": "Pluck",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 1.0,
+        "atten-level": 0.5,
+        "decay-ms": 470.0,
+        "drift": 0.0,
+        "env-curve": -0.46,
+        "filter-cutoff": 2843.527111557004,
+        "filter-drive": 0.06,
+        "filter-resonance": 0.26,
+        "fold-amount": 0.52,
+        "fold-drive": 1.42,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.6,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 560.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.06,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.08,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 329.6276,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.14,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.46,
+        "velocity-filter": 0.12
+      },
+      "label": "Glass Pluck",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "fold-cv"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "random-pulse": {
+      "category": "Bass",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 5.0,
+        "atten-level": 0.5,
+        "decay-ms": 410.0,
+        "drift": 0.0,
+        "env-curve": -0.16,
+        "filter-cutoff": 354.98219972347374,
+        "filter-drive": 0.0,
+        "filter-resonance": 0.16,
+        "fold-amount": 0.02,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.7,
+        "pulse-width": 0.4,
+        "pwm-mod-depth": 0.12,
+        "release-ms": 280.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.36,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.28,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 3.0,
+        "sustain": 0.66,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 110.0,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.96,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.22,
+        "velocity-filter": 0.07
+      },
+      "label": "Solid Pulse Bass",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "lfo",
+            "target": "pwm"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "rubber-filter": {
+      "category": "Bass",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 3.0,
+        "atten-level": 0.5,
+        "decay-ms": 300.0,
+        "drift": 0.0,
+        "env-curve": -0.28,
+        "filter-cutoff": 211.00554925655808,
+        "filter-drive": 0.18,
+        "filter-resonance": 0.42,
+        "fold-amount": 0.04,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.68,
+        "pulse-width": 0.35,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 180.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.2,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.48,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 1.0,
+        "sustain": 0.4,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.48,
+        "vcf-mod-mix": 0.0,
+        "vco-frequency-hz": 98.0,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.84,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.34,
+        "velocity-filter": 0.18
+      },
+      "label": "Rubber Bass",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "scatter-motion": {
+      "category": "Lead",
+      "controls": {
+        "amp-sat": 0.1,
+        "attack-ms": 6.0,
+        "atten-level": 0.5,
+        "decay-ms": 480.0,
+        "drift": 0.0,
+        "env-curve": 0.0,
+        "filter-cutoff": 2339.591911031453,
+        "filter-drive": 0.08,
+        "filter-resonance": 0.12,
+        "fold-amount": 0.1,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 2.0,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.68,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 420.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.78,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 196.0,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.28,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.22,
+        "velocity-filter": 0.0
+      },
+      "label": "Open Saw Lead",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "eg",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "silk-vibrato": {
+      "category": "Lead",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 10.0,
+        "atten-level": 0.014,
+        "decay-ms": 450.0,
+        "drift": 0.0,
+        "env-curve": 0.0,
+        "filter-cutoff": 1803.7808069145906,
+        "filter-drive": 0.06,
+        "filter-resonance": 0.2,
+        "fold-amount": 0.5,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 90.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 5.2,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.08,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.68,
+        "pulse-width": 0.46,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 460.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.8,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 261.6256,
+        "vco-mod-depth": 0.03,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.42,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.24,
+        "velocity-filter": 0.0
+      },
+      "label": "Singing Lead",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-audio",
+            "source": "lfo",
+            "target": "atten-plus5"
+          },
+          {
+            "kind": "internal-dynamic-control",
+            "source": "atten",
+            "target": "1v-oct"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "slow-tide": {
+      "category": "Pad",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 720.0,
+        "atten-level": 0.5,
+        "decay-ms": 1650.0,
+        "drift": 0.1,
+        "env-curve": 0.36,
+        "filter-cutoff": 637.321196729145,
+        "filter-drive": 0.0,
+        "filter-resonance": 0.16,
+        "fold-amount": 0.12,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 130.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 0.15,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.16,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.61,
+        "pulse-width": 0.5,
+        "pwm-mod-depth": 0.0,
+        "release-ms": 2800.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.86,
+        "tolerance": 0.08,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.06,
+        "vcf-mod-mix": 1.0,
+        "vco-frequency-hz": 196.0,
+        "vco-mod-depth": 0.01,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.34,
+        "vco-wave-mode": 2.0,
+        "velocity-amp": 0.16,
+        "velocity-filter": 0.0
+      },
+      "label": "Warm Pad",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "lfo",
+            "target": "cutoff"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    },
+    "tremolo-wire": {
+      "category": "Keys",
+      "controls": {
+        "amp-sat": 0.0,
+        "attack-ms": 12.0,
+        "atten-level": 0.5,
+        "decay-ms": 520.0,
+        "drift": 0.0,
+        "env-curve": 0.0,
+        "filter-cutoff": 1144.2216204549895,
+        "filter-drive": 0.0,
+        "filter-resonance": 0.14,
+        "fold-amount": 0.5,
+        "fold-drive": 1.0,
+        "fx-delay": 0.0,
+        "fx-delay-age": 0.28,
+        "fx-delay-division": 4.0,
+        "fx-delay-feedback": 0.3,
+        "fx-delay-sync-mode": 0.0,
+        "fx-delay-tempo-bpm": 120.0,
+        "fx-delay-time-ms": 380.0,
+        "fx-delay-width": 1.0,
+        "fx-delay-wow": 0.08,
+        "fx-reverb": 0.0,
+        "fx-reverb-decay-seconds": 3.6,
+        "fx-reverb-mod-depth-ms": 0.3,
+        "fx-reverb-mod-rate-hz": 0.16,
+        "fx-reverb-predelay-ms": 14.0,
+        "fx-reverb-size": 0.62,
+        "fx-reverb-width": 1.2,
+        "glide-ms": 0.0,
+        "ignite-fall-ms": 620.0,
+        "ignite-motion-depth": 0.0,
+        "ignite-rise-ms": 8.0,
+        "kb-scale": 1.0,
+        "keyboard-transpose-semitones": 0.0,
+        "keyboard-tune-cents-0": 0.0,
+        "keyboard-tune-cents-1": 0.0,
+        "keyboard-tune-cents-10": 0.0,
+        "keyboard-tune-cents-11": 0.0,
+        "keyboard-tune-cents-12": 0.0,
+        "keyboard-tune-cents-2": 0.0,
+        "keyboard-tune-cents-3": 0.0,
+        "keyboard-tune-cents-4": 0.0,
+        "keyboard-tune-cents-5": 0.0,
+        "keyboard-tune-cents-6": 0.0,
+        "keyboard-tune-cents-7": 0.0,
+        "keyboard-tune-cents-8": 0.0,
+        "keyboard-tune-cents-9": 0.0,
+        "lfo-rate-hz": 0.55,
+        "lfo-run-mode": 0.0,
+        "lfo-sync-division": 3.0,
+        "lfo-sync-mode": 2.0,
+        "lfo-sync-phase": 0.0,
+        "lfo-wave": 0.0,
+        "lfo-wave-mode": 0.0,
+        "one-level": 0.5,
+        "output-level": 0.65,
+        "pulse-width": 0.38,
+        "pwm-mod-depth": 0.18,
+        "release-ms": 560.0,
+        "sub-fine-cents": 0.0,
+        "sub-level": 0.0,
+        "sub-octave": -1.0,
+        "sub-pulse-width": 0.5,
+        "sub-sync-mode": 1.0,
+        "sub-transpose-semitones": 0.0,
+        "sub-wave": 0.0,
+        "sustain": 0.68,
+        "tolerance": 0.0,
+        "vca-mode": 0.0,
+        "vcf-mod-depth": 0.0,
+        "vcf-mod-mix": 0.5,
+        "vco-frequency-hz": 246.942,
+        "vco-mod-depth": 0.0,
+        "vco-mod-mix": 0.5,
+        "vco-wave": 0.9,
+        "vco-wave-mode": 0.0,
+        "velocity-amp": 0.28,
+        "velocity-filter": 0.08
+      },
+      "label": "Pulse Keys",
+      "macros": {
+        "drive": 0.18,
+        "envelope": 0.32,
+        "fold": 0.35,
+        "ignite": 0.0,
+        "level": 0.66,
+        "motion": 0.24,
+        "tone": 0.5
+      },
+      "patchState": {
+        "cables": [
+          {
+            "kind": "internal-dynamic-control",
+            "source": "lfo",
+            "target": "pwm"
+          }
+        ],
+        "schema": "moog-patch-state-v1",
+        "slug": "mavis"
+      },
+      "performance": {
+        "arpeggiator": {
+          "accentAmount": 20,
+          "bpm": 120.0,
+          "clockMode": "INTERNAL",
+          "division": "1/16",
+          "enabled": false,
+          "fixedVelocity": 104,
+          "gate": 0.72,
+          "hold": false,
+          "octaveProbability": 1.0,
+          "octaves": 1,
+          "pattern": [
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            },
+            {
+              "enabled": true,
+              "gateOffset": 0.0,
+              "octaveOffset": 0,
+              "pitchOffset": 0,
+              "velocityOffset": 0
+            }
+          ],
+          "patternLength": 8,
+          "patternRotation": 0,
+          "probability": 1.0,
+          "ratchet": 1,
+          "retrigger": "FIRST",
+          "schema": "plicata.arp.v1",
+          "seed": 2135587861,
+          "style": "UP",
+          "swing": 0.0,
+          "velocityMode": "KEY"
+        },
+        "keyboardYTargets": [
+          {
+            "endpointId": "control.filter-cutoff",
+            "mapping": "log",
+            "maximum": 80.0,
+            "minimum": 16000.0
+          }
+        ]
+      }
+    }
+  }
+}
