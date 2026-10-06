@@ -97,16 +97,16 @@ body.products-showcase-page::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 0 0 -48px;
+  inset: 0;
   pointer-events: none;
   background:
     radial-gradient(ellipse 72% 120% at 76% 0%, rgba(var(--header-rgb), .56), transparent 72%),
     linear-gradient(105deg, rgba(var(--header-rgb), .42), rgba(var(--header-rgb), .18) 58%, rgba(9, 9, 9, .9)),
     #090909;
-  filter: saturate(1.12) blur(1px);
+  filter: saturate(1.12);
   transition: background 420ms ease, filter 420ms ease;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 49%, rgba(0,0,0,.82) 68%, rgba(0,0,0,.28) 84%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 49%, rgba(0,0,0,.82) 68%, rgba(0,0,0,.28) 84%, transparent 100%);
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 .products-header::after {
   content: "";
