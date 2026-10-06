@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (()=>{const d=new Date(),h=d.getHours()+d.getMinutes()/60;document.documentElement.dataset.trambTheme=(h>=7&&h<19)?"day":"night";})();
+    </script>
     <title>Trambustissimo Instruments</title>
     <meta
       name="description"
@@ -11,6 +14,7 @@
     <link rel="stylesheet" href="../assets/portfolio.css?v=20260923" />
     <link rel="stylesheet" href="../assets/products-showcase.css?v=plicata43-20261005e" />
     <link rel="stylesheet" href="../assets/trambustissimo-brand.css?v=20261006a" />
+    <link rel="stylesheet" href="../assets/trambustissimo-day-night.css?v=20261006a" />
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <style>
       /* Public launch: preserve future commerce/audio/media markup in source without exposing it yet. */
@@ -775,5 +779,6 @@
 
     <script src="../assets/products-showcase.js?v=20261005b" defer></script>
     <script src="../assets/trambustissimo-brand.js?v=20261006a" defer></script>
+    <script src="../assets/trambustissimo-day-night.js?v=20261006a" defer></script>
   </body>
 </html>
