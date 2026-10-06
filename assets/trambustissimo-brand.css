@@ -1,4 +1,15 @@
 /* Trambustissimo header brand — generated from the approved local editor settings. */
+
+.products-brand { gap: 12px !important; }
+.products-brand__logo {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: none;
+}
 .products-brand {
   font-family: "Space Grotesk", sans-serif !important;
   font-size: 29px !important;
@@ -8,7 +19,7 @@
   padding: 8px 0 !important;
   white-space: nowrap !important;
 }
-.products-brand > span:first-child {
+.products-brand__word {
   display: inline-block !important;
   background: linear-gradient(234deg, #49d5f8, #49d5f8, #ff684d, #49d5f8) !important;
   background-size: 320% 320% !important;
@@ -39,6 +50,14 @@
   50% { background-position:100% 50%; filter:drop-shadow(0 0 20px #49d5f8aa); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .products-brand > span:first-child,
+  .products-brand__word,
   .products-brand .tramb-letter { animation: none !important; }
+}
+
+@media (max-width: 520px) {
+  .products-brand__logo {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
 }

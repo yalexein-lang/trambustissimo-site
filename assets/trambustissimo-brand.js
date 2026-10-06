@@ -45,7 +45,7 @@
   }
 
   function install() {
-    const holder = document.querySelector(".products-brand > span:first-child");
+    const holder = document.querySelector(".products-brand__word");
     if (!holder) return;
     if (holder.textContent.trim() !== WORD || CONFIG.letterEnabled) holder.textContent = WORD;
     letterize(holder);

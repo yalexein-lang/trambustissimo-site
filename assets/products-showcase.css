@@ -114,7 +114,7 @@ body.products-showcase-page::before {
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-.products-brand span:last-child { color: var(--products-muted); }
+.products-brand__word { min-width: 0; }
 .products-header__nav {
   justify-self: end;
   display: flex;
@@ -1547,12 +1547,12 @@ body.is-cart-open { overflow: hidden; }
 }
 
 @media (max-width: 520px) {
-  .products-brand span:first-child {
+  .products-brand__word {
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .products-brand span:last-child { display: none; }
+  .products-brand__logo { width: 34px; height: 34px; flex-basis: 34px; }
   .products-intro h1 { font-size: clamp(3.9rem, 18.2vw, 5.8rem); }
   .products-intro__copy p { font-size: 1.35rem; }
   .products-intro__editorial { min-height: min(58svh, 480px); }
