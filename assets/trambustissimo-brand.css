@@ -1,6 +1,10 @@
 /* Trambustissimo header brand — generated from the approved local editor settings. */
 
-.products-brand { gap: 12px !important; }
+.products-brand {
+  --tramb-font-size: 29px;
+  --tramb-tracking: 4.25px;
+  gap: 12px !important;
+}
 .products-brand__logo {
   width: 42px;
   height: 42px;
@@ -12,9 +16,9 @@
 }
 .products-brand {
   font-family: "Space Grotesk", sans-serif !important;
-  font-size: 29px !important;
+  font-size: var(--tramb-font-size, 29px) !important;
   font-weight: 800 !important;
-  letter-spacing: 4.25px !important;
+  letter-spacing: var(--tramb-tracking, 4.25px) !important;
   line-height: .95 !important;
   padding: 8px 0 !important;
   white-space: nowrap !important;
@@ -39,7 +43,7 @@
   width: var(--tramb-slot-width) !important;
   min-width: var(--tramb-slot-width) !important;
   max-width: var(--tramb-slot-width) !important;
-  margin-right: 4.25px !important;
+  margin-right: var(--tramb-tracking, 4.25px) !important;
   letter-spacing: 0 !important;
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
@@ -55,9 +59,22 @@
 }
 
 @media (max-width: 520px) {
+  .products-brand {
+    --tramb-font-size: clamp(15px, 5.15vw, 20px);
+    --tramb-tracking: clamp(.5px, .55vw, 1.65px);
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .products-brand__word {
+    min-width: max-content !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: nowrap !important;
+  }
   .products-brand__logo {
-    width: 34px;
-    height: 34px;
-    flex-basis: 34px;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
   }
 }

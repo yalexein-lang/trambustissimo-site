@@ -37,7 +37,8 @@
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     const family = FONT_FAMILIES[CONFIG.font] || FONT_FAMILIES["space-grotesk"];
-    ctx.font = `${CONFIG.weight} ${CONFIG.size}px ${family}`;
+    const fontSize = Math.max(1, parseFloat(getComputedStyle(holder).fontSize) || CONFIG.size);
+    ctx.font = `${CONFIG.weight} ${fontSize}px ${family}`;
     letters.forEach((el, i) => {
       const width = Math.max(1, ctx.measureText(WORD[i] || el.textContent || "M").width);
       el.style.setProperty("--tramb-slot-width", `${width}px`);
