@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex,nofollow,nosnippet">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-hv+JloRbnCs9/siqYMOhm4y81LOGRPnrXAA8Okp5jwU='; style-src 'sha256-2TsQTvR5bC1h6A2PNQkoIbTJWmzgwk/5bw/ZmWzw1Eo='; connect-src https://plicata-desktop-activation.yalexein.workers.dev https://monodia32-desktop-activation.yalexein.workers.dev https://coprimia-desktop-activation.yalexein.workers.dev https://battuta8-desktop-activation.yalexein.workers.dev https://mutaviaii-desktop-activation.yalexein.workers.dev https://spettra10-desktop-activation.yalexein.workers.dev; base-uri 'none'; object-src 'none'; frame-src 'none'; form-action 'none'; img-src 'none'; font-src 'none'; upgrade-insecure-requests">
+<title>Trambustissimo — offline activation</title>
+<style>
+:root {font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark;font-size:15px}*{box-sizing:border-box}
+body{margin:0;background:#101315;color:#e9ebed;line-height:1.55}main{max-width:660px;margin:0 auto;padding:44px 24px 70px}
+header{padding-bottom:24px;border-bottom:1px solid #363e43}h1{font-size:1.8rem;line-height:1.15;letter-spacing:-.035em;margin:8px 0 12px;font-weight:600}h2{font-size:1.04rem;font-weight:600;margin:25px 0 8px}p{margin:9px 0;color:#bbc5c8}.eyebrow{color:#9bafb6;font-size:.79rem;letter-spacing:.12em;text-transform:uppercase}
+form{display:grid;gap:15px;padding:21px 0}label{display:grid;gap:7px;color:#e6e9eb;font-size:.9rem}input,select,textarea,button{font:inherit}input,select,textarea{border:1px solid #596169;background:#20272b;color:#f6f6f6;padding:11px 13px;border-radius:5px;width:100%;min-height:44px}textarea{min-height:104px;resize:vertical;font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;font-size:.81rem}button{background:#e0e3e4;color:#101315;border:1px solid #eff2f3;border-radius:5px;padding:12px 16px;cursor:pointer;font-weight:600}button:disabled{opacity:.55;cursor:wait}a{color:#a7d4df}small{color:#aab7bd;font-size:.83rem}output{display:block;min-height:2rem;padding-top:8px;color:#c5dade}output[role="alert"]{color:#f4aba0}.note{border-left:2px solid #64767e;padding-left:15px;margin:20px 0}.divider{height:1px;background:#363e43;margin:16px 0}
+@media(prefers-color-scheme:light){:root{color-scheme:light}body{background:#fff;color:#252c30}p,small{color:#45555e}.eyebrow{color:#53656d}header,.divider{border-color:#c9cfd3}label{color:#252c30}input,select,textarea{background:#f4f6f7;color:#13191c;border-color:#aab4b9}button{color:white;background:#222b30;border-color:#222b30}.note{border-color:#afbfc5}}
+</style>
+</head>
+<body><main>
+<header><p><a href="/" rel="home">← Trambustissimo instruments</a></p>
+<div class="eyebrow">Trambustissimo / desktop licences</div><h1>Offline activation</h1>
+<p>Activate a VST3 instrument or standalone application without connecting the music computer to the Internet.</p></header>
+<h2>1. Create a request on the music computer</h2>
+<p>Open the product's <em>LICENSE &amp; DEVICES</em> panel. Under <em>Offline activation</em>, save the computer request, or copy its computer code. Transfer the request to this Internet-connected device.</p>
+<h2>2. Verify your purchase</h2>
+<form id="activation-form" autocomplete="off">
+<label>Product<select id="product" required>
+<option value="">Choose a product</option>
+<option value="trambustissimo.desktop.plicata.v1">PLICATA</option>
+<option value="trambustissimo.desktop.monodia32.v1">MONODIA 32</option>
+<option value="trambustissimo.desktop.coprimia.v1">COPRIMIA</option>
+<option value="trambustissimo.desktop.battuta8.v1">BATTUTA 8</option>
+<option value="trambustissimo.desktop.mutavia2.v1">MUTAVIA II</option>
+<option value="trambustissimo.desktop.spettra10.v1">SPETTRA 10</option>
+</select></label>
+<label>Offline request file (optional)<input id="request-file" type="file" accept=".trmrequest,.json,text/plain"></label>
+<label>Computer code or saved offline request<textarea id="challenge" required maxlength="4096" placeholder="Paste the computer code, or the contents of its offline request file."></textarea></label>
+<label>Gumroad licence key<input id="license" type="text" required minlength="12" maxlength="100" spellcheck="false" autocomplete="off" placeholder="Enter the key from your purchase receipt"></label>
+<div class="note"><small>The key is sent only to the selected Trambustissimo activation service for verification with Gumroad. Nothing is saved to this browser, stored locally, or sent to a different product's service.</small></div>
+<button id="activate" type="submit">Generate signed activation file</button>
+<output id="status" aria-live="polite"></output>
+<a id="download" hidden download>Download signed activation file</a>
+</form>
+<div class="divider"></div>
+<h2>3. Import on the music computer</h2>
+<p>Transfer the downloaded <code>.trmlicense</code> file to the offline computer. Open <em>LICENSE &amp; DEVICES → Offline activation</em>, import the file and choose <em>Apply signed activation</em>. The native plug-in verifies the signature and its binding to the computer. The computer can remain offline afterward.</p>
+<p><small>Each purchase supports up to three registered computers. A new computer requires its own request and signed file. Licence release and other Gumroad account actions require access to the activation service.</small></p>
+</main>
+<script>
+'use strict';
+// One-to-one immutable product -> TLS endpoint and product-specific public-key hash.
+// No dynamic endpoint construction from submitted filenames, responses or licence keys.
+const PRODUCTS=Object.freeze({
+ 'trambustissimo.desktop.plicata.v1':{name:'PLICATA',url:'https://plicata-desktop-activation.yalexein.workers.dev',publicKeyHash:'f0f465a367950f9278642af3cf97a0ad999d4b04dbc924621620992c3234992c'},
+ 'trambustissimo.desktop.monodia32.v1':{name:'MONODIA 32',url:'https://monodia32-desktop-activation.yalexein.workers.dev',publicKeyHash:'415559cd3f2d8cc1f35a19181490e00ac6fc7612a71992077831d325de328029'},
+ 'trambustissimo.desktop.coprimia.v1':{name:'COPRIMIA',url:'https://coprimia-desktop-activation.yalexein.workers.dev',publicKeyHash:'1bd6b04ecd1a5e6a3327e18c8ae0ae84b9be34f7bf9d3c174c6528dc7c640b1d'},
+ 'trambustissimo.desktop.battuta8.v1':{name:'BATTUTA 8',url:'https://battuta8-desktop-activation.yalexein.workers.dev',publicKeyHash:'23811cd71597ef1eddcd89b83c6245ce19b28b230011d2ce0e03d7f6636189dd'},
+ 'trambustissimo.desktop.mutavia2.v1':{name:'MUTAVIA II',url:'https://mutaviaii-desktop-activation.yalexein.workers.dev',publicKeyHash:'a9d8938abe67576309206cd9409f4d1883df09b82003312ade5ca79fe48e5256'},
+ 'trambustissimo.desktop.spettra10.v1':{name:'SPETTRA 10',url:'https://spettra10-desktop-activation.yalexein.workers.dev',publicKeyHash:'ae176405b16751e798af7a293a8582a48e26198a17dfe7065f64da6ffa351f07'}
+});
+const el=id=>document.getElementById(id);
+let downloadURL=null;
+const setStatus=(message,alert=false)=>{el('status').textContent=message;el('status').setAttribute('role',alert?'alert':'status');};
+function parseRequest(text,selected) {
+ let productId=selected,raw=String(text||'').trim(),challenge=raw;
+ if(!Object.hasOwn(PRODUCTS,productId))throw Error('Select a valid Trambustissimo product.');
+ if(raw.startsWith('{')){
+   if(raw.length>4096)throw Error('Request file is too large.');
+   let request;try{request=JSON.parse(raw);}catch{throw Error('Unreadable request file.');}
+   const current=request.schema==='trambustissimo.desktop.offline-request.v1';
+   const legacyPlicata=request.schema==='plicata-computer-activation-request-v1' && request.productId==='trambustissimo.desktop.plicata.v1';
+   if(!current&&!legacyPlicata)throw Error('Unsupported offline request.');
+   if(request.productId!==productId)throw Error('The request belongs to a different product.');
+   challenge=String(request.machineChallenge||'');
+ }
+ if(!/^[MWL][0-9a-fA-F]{9,79}$/.test(challenge))throw Error('Invalid computer code. Copy the exact code from LICENSE & DEVICES.');
+ return {productId,machineChallenge:challenge};
+}
+function saveActivation(name,text) {
+ if(typeof text!=='string'||text.length<40||text.length>65536)throw Error('Invalid signed activation file.');
+ if(downloadURL)URL.revokeObjectURL(downloadURL);
+ const data=new Blob([text],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(data);
+ downloadURL=url;
+ const a=el('download');a.href=url;a.download=name.replace(/[^A-Za-z0-9-]/g,'-')+'-activation.trmlicense';a.textContent='Download '+name+' signed activation';a.hidden=false;a.click();
+}
+window.addEventListener('pagehide',()=>{if(downloadURL)URL.revokeObjectURL(downloadURL);downloadURL=null;});
+el('request-file').addEventListener('change',async()=>{
+ const file=el('request-file').files?.[0];if(!file)return;
+ if(file.size>4096){setStatus('Request file is too large.',true);return;}
+ try{const text=await file.text();const request=JSON.parse(text);
+   if(!Object.hasOwn(PRODUCTS,request.productId))throw Error('Unknown product in request file.');
+   el('product').value=request.productId;el('challenge').value=text;
+   setStatus('Offline request loaded.');
+ }catch{setStatus('Could not read the computer request file.',true);}
+});
+el('activation-form').addEventListener('submit',async event=>{
+ event.preventDefault();const button=el('activate');if(button.disabled)return;
+ const key=el('license').value.trim();if(!/^[A-Za-z0-9-]{12,100}$/.test(key)){setStatus('Enter a valid Gumroad licence key.',true);return;}
+ let request;try{request=parseRequest(el('challenge').value,el('product').value);}catch(err){setStatus(err.message,true);return;}
+ const info=PRODUCTS[request.productId];button.disabled=true;el('download').hidden=true;setStatus('Checking product identity and purchase…');
+ try{
+   const check=await fetch(info.url+'/health',{method:'GET',cache:'no-store',credentials:'omit',redirect:'error',signal:AbortSignal.timeout(10000)});
+   if(!check.ok)throw Error('The product activation service is unavailable.');
+   const health=await check.json();
+   if(health.productId!==request.productId || health.ready!==true || health.publicKeySha256!==info.publicKeyHash || health.machineLimit!==3)
+     throw Error('The activation service identity could not be verified.');
+   const response=await fetch(info.url+'/v1/activate',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...request,licenseKey:key}),cache:'no-store',credentials:'omit',redirect:'error',signal:AbortSignal.timeout(25000)});
+   const body=await response.json().catch(()=>null);
+   if(!response.ok || !body?.accepted){throw Error(body?.message && response.status>=400 && response.status<500 ? 'The licence could not be verified. Check its product and available computer slots.' : 'Activation service unavailable; no licence file issued.');}
+   if(body.productId!==request.productId || typeof body.signedActivation!=='string')throw Error('The activation response did not match the product.');
+   saveActivation(info.name,body.signedActivation);
+   setStatus('Signed activation file generated. Use the download link if the browser did not save it automatically, then transfer the file to the offline music computer.');
+ }catch(error){setStatus(error instanceof Error?error.message:'Could not issue the licence.',true);}
+ finally{button.disabled=false;el('license').value='';}
+});
+</script>
+</body></html>
