@@ -809,7 +809,7 @@ body.products-showcase-page::before {
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1140 / 522;
+  aspect-ratio: 1366 / 1024;
   min-height: 0;
   background:
     radial-gradient(circle at 50% 42%, #1a1a19 0%, #10100f 45%, #080808 100%);
@@ -1591,7 +1591,7 @@ html[data-tramb-theme="night"] .products-social a[title="TikTok"] img {
   .product-detail-grid { grid-template-columns: 1fr; }
   .product-detail-card--wide { grid-column: auto; }
   .product-detail-card--wide .product-detail-card__media { aspect-ratio: 1366 / 1024; }
-  .product-visual__stage { min-height: 0; aspect-ratio: 1140 / 522; }
+  .product-visual__stage { min-height: 0; aspect-ratio: 1366 / 1024; }
   .product-visual__meta span:last-child { display: none; }
   .store-cart-trigger { position: absolute; right: var(--products-pad); top: 10px; }
   .products-footer { grid-template-columns: 1fr; gap: 14px; }
@@ -1630,7 +1630,7 @@ html[data-tramb-theme="night"] .products-social a[title="TikTok"] img {
   .product-description { font-size: .9rem; line-height: 1.56; }
   .product-detail-card__copy { grid-template-columns: 27px minmax(0, 1fr); padding: 18px; }
   .product-detail-card__copy h4 { font-size: 1.7rem; }
-  .product-visual__stage { aspect-ratio: 1140 / 522; }
+  .product-visual__stage { aspect-ratio: 1366 / 1024; }
   .audio-sample {
     min-height: 52px;
     grid-template-columns: 22px 34px minmax(84px, .7fr) minmax(90px, 1.25fr) 42px;
@@ -2602,9 +2602,9 @@ body.products-showcase-page::before {
   }
 }
 
-/* PLICATA43: retain the complete iPad surface without cropping. */
+/* All current product surfaces share a 4:3 iPad-landscape visual frame. */
 #plicata .product-visual__stage { aspect-ratio: 1366 / 1024; }
 
 @media (max-height: 619px) {
-  #plicata .product-visual__chrome { width: min(100%, calc(133.333svh - 133.333px)); }
+  .product-visual__chrome { width: min(100%, calc(133.333svh - 133.333px)); }
 }
