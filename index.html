@@ -26,6 +26,18 @@
       .product-format,
       .product-detail-card__media:has(img) { display: none !important; }
       .products-legal-note { grid-column: 1 / -1; margin: 0; font-size: .625rem; line-height: 1.45; letter-spacing: .025em; text-transform: none; color: #aaa79f; opacity: .72; }
+
+      .products-header__support { display:inline-flex; align-items:center; justify-self:end; min-height:44px; font-size:.8rem; text-underline-offset:.2em; }
+      .products-header { grid-template-columns:auto minmax(0,1fr) auto; }
+      .products-header__nav { grid-column:2; grid-row:1; max-width:100%; }
+      .products-header__support { grid-column:3; grid-row:1; }
+      .product-availability__store { flex-wrap:wrap; }
+      .product-availability__store .product-manual-link { color:inherit; font:inherit; gap:.35em; }
+      @media(max-width:1180px) {
+        .products-header { grid-template-columns:minmax(0,1fr) auto; }
+        .products-header__nav { grid-column:1/-1; grid-row:2; justify-self:stretch; }
+        .products-header__support { grid-column:2; }
+      }
     </style>
   </head>
   <body class="products-showcase-page" data-demo-layout="interactive" data-public-catalog="true">
@@ -36,7 +48,8 @@
         <img class="products-brand__logo" src="../assets/trambustissimo-logo.png" alt="" width="1080" height="1080" aria-hidden="true" />
         <span class="products-brand__word">TRAMBUSTISSIMO</span>
       </a>
-      <nav class="products-header__nav" aria-label="Instruments on this page">
+      <a class="products-header__support" href="https://alessandroguardascione.com/support">Support</a>
+      <nav class="products-header__nav" aria-label="Main navigation">
         <a href="#plicata">PLICATA</a>
         <a href="#monodia">MONODIA</a>
         <a href="#battuta">BATTUTA</a>
@@ -149,6 +162,7 @@
               <a class="app-store-badge" href="https://apps.apple.com/ie/app/plicata/id6810792998" rel="external" aria-label="Download PLICATA on the App Store">
                 <img src="./badges/download-on-the-app-store.svg" alt="Download on the App Store" width="120" height="40" />
               </a>
+              <a class="product-availability__support product-manual-link" href="/manuals/plicata.html" aria-label="PLICATA manual">Manual <span aria-hidden="true">↗</span></a>
             </div>
             <dl class="product-availability__matrix">
               <div>
@@ -535,6 +549,7 @@
               <a class="app-store-badge" href="https://apps.apple.com/app/battuta-8/id6811014082" rel="external" aria-label="Download BATTUTA 8 on the App Store">
                 <img src="./badges/download-on-the-app-store.svg" alt="Download on the App Store" width="120" height="40" />
               </a>
+              <a class="product-availability__support product-manual-link" href="/manuals/battuta.html" aria-label="BATTUTA 8 manual">Manual <span aria-hidden="true">↗</span></a>
             </div>
             <dl class="product-availability__matrix">
               <div><dt>Targets</dt><dd><span class="platform-mark"><span class="platform-glyph platform-glyph--phone" aria-hidden="true"></span>iPhone</span><span class="platform-mark"><span class="platform-glyph platform-glyph--tablet" aria-hidden="true"></span>iPad</span></dd></div>
@@ -699,6 +714,7 @@
               <a class="app-store-badge" href="https://apps.apple.com/app/mutavia-ii/id6811014336" rel="external" aria-label="Download MUTAVIA II on the App Store">
                 <img src="./badges/download-on-the-app-store.svg" alt="Download on the App Store" width="120" height="40" />
               </a>
+              <a class="product-availability__support product-manual-link" href="/manuals/mutavia.html" aria-label="MUTAVIA II manual">Manual <span aria-hidden="true">↗</span></a>
             </div>
             <dl class="product-availability__matrix">
               <div><dt>Targets</dt><dd><span class="platform-mark"><span class="platform-glyph platform-glyph--phone" aria-hidden="true"></span>iPhone</span><span class="platform-mark"><span class="platform-glyph platform-glyph--tablet" aria-hidden="true"></span>iPad</span></dd></div>

@@ -309,3 +309,5 @@ h1, .chapter h2 {
   .case-image { filter: none; }
   figure, .steps li, .reference > div { break-inside: avoid; }
 }
+
+.footer-links { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; }
