@@ -139,10 +139,11 @@ main, .site-footer {
 }
 
 .instrument-caption {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(min-content, 1fr) minmax(0, max-content);
+  align-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  gap: 3px 8px;
   height: var(--caption-height);
   padding: 0 47px 0 2px;
   border-bottom: 1px solid var(--line);
@@ -176,6 +177,15 @@ main, .site-footer {
 }
 
 .instrument-platforms--development { color: var(--muted); }
+
+.platform-upcoming {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: .66rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
 
 .instrument-toggle {
   position: absolute;
