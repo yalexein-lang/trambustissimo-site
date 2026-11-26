@@ -33,6 +33,35 @@
       .products-header__support { grid-column:3; grid-row:1; }
       .product-availability__store { flex-wrap:wrap; }
       .product-availability__store .product-manual-link { color:inherit; font:inherit; gap:.35em; }
+
+      .products-newsletter {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 24px 48px;
+        padding: clamp(34px, 6vw, 78px) var(--products-pad);
+        border-bottom: 1px solid var(--products-line);
+        background: var(--products-panel);
+        color: var(--products-text);
+        scroll-margin-top: 80px;
+      }
+      .products-newsletter h2 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3.75rem);
+        line-height: 1.05;
+        letter-spacing: -.04em;
+      }
+      .products-newsletter p {
+        margin: .75rem 0 0;
+        color: var(--products-muted);
+        line-height: 1.5;
+      }
+      .products-newsletter .products-action { font-size: .8rem; }
+      .products-newsletter__action { width: fit-content; }
+      .products-newsletter__action p { font-size: .8rem; }
+      @media (max-width: 640px) {
+        .products-newsletter { grid-template-columns: 1fr; }
+      }
       @media(max-width:1180px) {
         .products-header { grid-template-columns:minmax(0,1fr) auto; }
         .products-header__nav { grid-column:1/-1; grid-row:2; justify-self:stretch; }
@@ -59,6 +88,7 @@
         <a href="#tacta">TACTA</a>
         <a href="/manuals/">MANUALS</a>
         <a href="/activate/">ACTIVATE</a>
+        <a href="#newsletter">NEWSLETTER</a>
       </nav>
       <button class="store-cart-trigger" type="button" data-cart-open aria-controls="store-cart" aria-expanded="false" hidden>
         <span>Cart</span><b data-cart-count>0</b>
@@ -792,6 +822,16 @@
         </figure>
       </section>
 
+      <section class="products-newsletter" id="newsletter" aria-labelledby="newsletter-title">
+        <div>
+          <h2 id="newsletter-title">Newsletter</h2>
+          <p>Get an email when we release a new instrument or ship a major update.</p>
+        </div>
+        <div class="products-newsletter__action">
+          <a class="products-action products-action--primary" href="https://trambustissimo.gumroad.com/subscribe" rel="external">Subscribe on Gumroad <span aria-hidden="true">&nbsp;↗</span></a>
+          <p>Free. Unsubscribe at any time.</p>
+        </div>
+      </section>
     </main>
 
     <div class="store-cart-backdrop" data-cart-backdrop hidden></div>
@@ -815,7 +855,8 @@
 
     <footer class="products-footer">
       <span class="products-footer__brand">TRAMBUSTISSIMO</span>
-      <nav class="products-help" aria-label="Trambustissimo support and privacy" style="display:flex;gap:1.25rem;flex-wrap:wrap">
+      <nav class="products-help" aria-label="Trambustissimo information" style="display:flex;gap:1.25rem;flex-wrap:wrap">
+        <a href="#newsletter">Newsletter</a>
         <a href="https://alessandroguardascione.com/support" rel="external">Support &amp; contact</a>
         <a href="https://alessandroguardascione.com/privacy" rel="external">Privacy policy</a>
       </nav>
