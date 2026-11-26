@@ -38,6 +38,12 @@
         .products-header__nav { grid-column:1/-1; grid-row:2; justify-self:stretch; }
         .products-header__support { grid-column:2; }
       }
+
+      .products-header__nav a[href="#newsletter"] { --nav-rgb: 128, 165, 147; }
+      .products-newsletter { width: min(calc(100% - 1.5rem), 38rem); margin: clamp(2rem, 5vw, 4rem) auto; scroll-margin-top: 8rem; }
+      .products-newsletter__form { display: block; width: 100%; height: clamp(680px, calc(1555px - 150vw), 1120px); border: 0; border-radius: .75rem; background: #eff2f7; }
+      .products-newsletter__links { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1rem; margin: .75rem 0 0; font-size: .875rem; }
+      .products-newsletter__links a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
     </style>
   </head>
   <body class="products-showcase-page" data-demo-layout="interactive" data-public-catalog="true">
@@ -59,6 +65,7 @@
         <a href="#tacta">TACTA</a>
         <a href="/manuals/">MANUALS</a>
         <a href="/activate/">ACTIVATE</a>
+        <a href="#newsletter">NEWSLETTER</a>
       </nav>
       <button class="store-cart-trigger" type="button" data-cart-open aria-controls="store-cart" aria-expanded="false" hidden>
         <span>Cart</span><b data-cart-count>0</b>
@@ -792,6 +799,19 @@
         </figure>
       </section>
 
+      <section class="products-newsletter" id="newsletter" aria-label="Newsletter">
+        <iframe
+          class="products-newsletter__form"
+          title="Trambustissimo newsletter sign-up"
+          src="https://c27daa0c.sibforms.com/v2/serve/MUIFAEQKvYoh9vmSdXznpLCql8SGIILHLuet5_ueTWvZ3IH_jzTjng1Ma_ncACE0rx859CkNRdG5vCiJJxxG9fKu38iNnW9Gk1g4yBC5fnytIrKiFm0do-RNBSsXsfDl81BWYk1kKH1OBF6H7md1yVH-u_-fWeYPoov4rlWpFhli20PzTPvfOw_jQBb96vDpsbOmtWU7D0hDpmVdOQ=="
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+        <p class="products-newsletter__links">
+          <a href="https://c27daa0c.sibforms.com/serve/MUIFAEQKvYoh9vmSdXznpLCql8SGIILHLuet5_ueTWvZ3IH_jzTjng1Ma_ncACE0rx859CkNRdG5vCiJJxxG9fKu38iNnW9Gk1g4yBC5fnytIrKiFm0do-RNBSsXsfDl81BWYk1kKH1OBF6H7md1yVH-u_-fWeYPoov4rlWpFhli20PzTPvfOw_jQBb96vDpsbOmtWU7D0hDpmVdOQ==">Open the sign-up form on Brevo</a>
+          <a href="https://alessandroguardascione.com/privacy">Privacy policy</a>
+        </p>
+      </section>
     </main>
 
     <div class="store-cart-backdrop" data-cart-backdrop hidden></div>
@@ -815,7 +835,8 @@
 
     <footer class="products-footer">
       <span class="products-footer__brand">TRAMBUSTISSIMO</span>
-      <nav class="products-help" aria-label="Trambustissimo support and privacy" style="display:flex;gap:1.25rem;flex-wrap:wrap">
+      <nav class="products-help" aria-label="Trambustissimo site links" style="display:flex;gap:1.25rem;flex-wrap:wrap">
+        <a href="#newsletter">Newsletter</a>
         <a href="https://alessandroguardascione.com/support" rel="external">Support &amp; contact</a>
         <a href="https://alessandroguardascione.com/privacy" rel="external">Privacy policy</a>
       </nav>
