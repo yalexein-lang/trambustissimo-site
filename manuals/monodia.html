@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" style="--accent: #285740">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shape a monophonic voice, sequence it across 32 steps and send performance data to other modules.">
+  <title>MONODIA 32 Manual · Trambustissimo</title>
+  <link rel="icon" href="../assets/trambustissimo-logo.png">
+  <link rel="stylesheet" href="instrument-manuals.css">
+  <link rel="canonical" href="https://trambustissimo.com/manuals/monodia.html">
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="manual-header">
+    <div class="manual-wrap">
+      <a class="brand" href="../"><img src="../assets/trambustissimo-logo.png" alt="" width="34" height="34">Trambustissimo</a>
+      <nav aria-label="Main navigation"><a href="../">Instruments</a><a href="index.html">Manuals</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="manual-hero">
+      <div class="manual-wrap hero-inner">
+        <div>
+          <p class="eyebrow">Semi-modular sequencer synth · Manual</p>
+          <h1>MONODIA 32</h1>
+          <p class="hero-intro">Shape a monophonic voice, sequence it across 32 steps and send performance data to other modules.</p>
+          <div class="hero-actions"><a class="manual-button" href="#start">Get started ↓</a><a href="../instruments/monodia/#manual">Product page</a></div>
+        </div>
+        <figure class="manual-shot hero-shot">
+  <a href="../assets/ui/monodia.webp" aria-label="View MONODIA 32 full instrument interface" tabindex="-1"><img src="../assets/ui/monodia.webp" alt="MONODIA 32 full instrument interface" width="2732" height="1920" loading="eager" decoding="async"></a>
+  <figcaption>Full interface. <a href="../assets/ui/monodia.webp" aria-label="Enlarge MONODIA 32 full instrument interface">Enlarge ↗</a></figcaption>
+</figure>
+      </div>
+    </div>
+    <div class="manual-wrap manual-layout">
+      <nav class="manual-toc" aria-labelledby="chapters-title">
+        <h2 id="chapters-title">Chapters</h2>
+        <ol>
+          <li><a href="#start">Play your first sequence</a></li>
+          <li><a href="#voice">Shape the voice</a></li>
+          <li><a href="#sequence">Edit the 32 steps</a></li>
+          <li><a href="#clock">Choose a clock source</a></li>
+          <li><a href="#memory">Recall slots and patterns</a></li>
+          <li><a href="#patch">Patch the voice and ASSIGN output</a></li>
+          <li><a href="#extensions">Set up EXT, SIG and GEN</a></li>
+          <li><a href="#fx">Process audio with MONODIA 32 FX</a></li>
+        </ol>
+      </nav>
+      <div class="manual-body">
+      <section class="manual-chapter" id="start" aria-labelledby="start-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">01</span><h2 id="start-title">Play your first sequence</h2></header>
+        <p class="chapter-intro">Load a Factory sound, then use the sequencer to hear how one edit changes the phrase.</p>
+<figure class="manual-shot">
+  <a href="figures/monodia-sequencer.webp" aria-label="View MONODIA 32 sequencer controls" tabindex="-1"><img src="figures/monodia-sequencer.webp" alt="MONODIA 32 sequencer controls" width="1500" height="525" loading="lazy" decoding="async"></a>
+  <figcaption>The Pattern monitor shows the active lane, step banks, transport and timing. <a href="figures/monodia-sequencer.webp" aria-label="Enlarge MONODIA 32 sequencer controls">Enlarge ↗</a></figcaption>
+</figure>
+<ol class="steps">
+  <li><div><strong class="step-title">Load a Factory sound</strong><p>Open the black preset display and choose a Factory sound.</p></div></li>
+  <li><div><strong class="step-title">Start a sequence</strong><p>Open SEQ and press PLAY. Use the 01–16 bank and select NOTE.</p></div></li>
+  <li><div><strong class="step-title">Edit a step</strong><p>Drag a step vertically to change its pitch. Select REST to leave a gap, then adjust CUTOFF on the main panel.</p></div></li>
+</ol>
+      </section>
+      <section class="manual-chapter" id="voice" aria-labelledby="voice-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">02</span><h2 id="voice-title">Shape the voice</h2></header>
+        <p class="chapter-intro">Follow the signal path from the oscillator and mixer through the filter and amplifier.</p>
+<figure class="manual-shot">
+  <a href="figures/monodia-voice.webp" aria-label="View MONODIA 32 voice controls" tabindex="-1"><img src="figures/monodia-voice.webp" alt="MONODIA 32 voice controls" width="1500" height="525" loading="lazy" decoding="async"></a>
+  <figcaption>The main panel groups the oscillator, mixer, filter, LFO, envelope and VCA from left to right. <a href="figures/monodia-voice.webp" aria-label="Enlarge MONODIA 32 voice controls">Enlarge ↗</a></figcaption>
+</figure>
+<div class="guide-topic"><h3>Sound and modulation</h3><p>Build the voice, one relationship at a time.</p><ol class="steps">
+  <li><div><p>The main panel follows a conventional semi-modular subtractive signal path.</p></div></li>
+  <li><div><p>Choose VCO WAVE and set PULSE WIDTH when using the pulse waveform.</p></div></li>
+  <li><div><p>Use MIX to balance oscillator material against the normalled noise/external-audio path.</p></div></li>
+  <li><div><p>Set FILTER MODE, CUTOFF and RESONANCE.</p></div></li>
+  <li><div><p>Use VCO MOD SOURCE, DESTINATION and AMOUNT for oscillator modulation.</p></div></li>
+  <li><div><p>Set LFO RATE/WAVE, ATTACK, DECAY and VCF MOD AMOUNT; choose SUSTAIN MODE and VCA MODE for articulation.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="sequence" aria-labelledby="sequence-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">03</span><h2 id="sequence-title">Edit the 32 steps</h2></header>
+        <p class="chapter-intro">Switch banks and edit notes, gates, rests, accents, glides and ratchets directly on the steps.</p>
+<figure class="manual-shot">
+  <a href="figures/monodia-sequencer.webp" aria-label="View MONODIA 32 sequencer controls" tabindex="-1"><img src="figures/monodia-sequencer.webp" alt="MONODIA 32 sequencer controls" width="1500" height="525" loading="lazy" decoding="async"></a>
+  <figcaption>The 01–16 and 17–32 bank controls sit above the step cells. <a href="figures/monodia-sequencer.webp" aria-label="Enlarge MONODIA 32 sequencer controls">Enlarge ↗</a></figcaption>
+</figure>
+<div class="guide-topic"><h3>Playing and patterns</h3><p>Explore the instrument’s own performance controls.</p><ol class="steps">
+  <li><div><p>Each of the 32 steps owns NOTE, GATE, REST, ACCENT, GLIDE and RATCHET data.</p></div></li>
+  <li><div><p>Open SEQ and use 01–16 / 17–32 to select a bank of sixteen large steps.</p></div></li>
+  <li><div><p>Choose NOTE, GATE, REST, ACCENT, GLIDE or RATCHET to decide what each step meter edits.</p></div></li>
+  <li><div><p>Drag vertically inside a step to change its value; continue horizontally or diagonally to edit several steps.</p></div></li>
+  <li><div><p>A short tap performs the lane-appropriate direct action, such as rest/accent/glide toggling.</p></div></li>
+  <li><div><p>Use BPM, LENGTH, DIRECTION, RANDOM, TRANSPOSE, SWING, KB ENTRY and ASSIGN in the same sequence workspace.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="clock" aria-labelledby="clock-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">04</span><h2 id="clock-title">Choose a clock source</h2></header>
+        <p class="chapter-intro">Set the internal timing or follow external pulses, step-address CV or MIDI clock.</p>
+
+<div class="guide-topic"><h3>TEMPO, ANALOG CLOCK AND MIDI CLOCK</h3><p>MONODIA 32 can run from its internal clock, single external advance pulses, analogue PPQN clock, step-address CV or MIDI realtime clock.</p><ol class="steps">
+  <li><div><p>For internal timing, set BPM and SWING in SEQ.</p></div></li>
+  <li><div><p>In EXT choose TEMPO INPUT MODE: CV, SINGLE CLOCK / ADVANCE, ANALOG CLOCK or STEP ADDRESS CV.</p></div></li>
+  <li><div><p>For ANALOG CLOCK choose INPUT PPQN from 1–14, 24 or 48 pulses per quarter. The follower locks after receiving timing information and continues generating musical step timing between pulses.</p></div></li>
+  <li><div><p>Enable FOLLOW MIDI CLOCK when MIDI realtime clock should be authoritative; FOLLOW MIDI START/STOP separately controls transport following.</p></div></li>
+  <li><div><p>Use MIDI CLOCK DIVISION and OUTPUT PPQN for received-clock division and exported clock density.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="memory" aria-labelledby="memory-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">05</span><h2 id="memory-title">Recall slots and patterns</h2></header>
+        <p class="chapter-intro">Use seven full-state live slots for performance. Use the 64 Pattern Locations to store sequences independently of the voice.</p>
+
+<div class="guide-topic"><h3>SEQUENCE SLOTS S1–S7 — COMPLETE STATE + TOUCH WRITE</h3><p>The seven Sequence Slots are complete, independent live memories. They are separate from the 64 Pattern Locations: each slot automatically saves the current sequence together with synthesis, patching, macros and performance settings.</p><ol class="steps">
+  <li><div><p>Choose a C0–F♯0 slot button to recall its stored state. SLOT LAUNCH sets immediate or quantized recall; the current sequence continues until the chosen boundary.</p></div></li>
+  <li><div><p>Edit the sequence and synth parameters freely: the active slot saves them automatically, without a separate STORE command.</p></div></li>
+  <li><div><p>COPY captures the active slot and sound. Select the destination, wait for recall, then PASTE. Only that destination is replaced; choose it deliberately before pasting.</p></div></li>
+  <li><div><p>If you are still dragging a knob or slider when you change slots, TOUCH WRITE keeps the value under your finger and immediately writes it into the new slot. Further movements keep writing there until release.</p></div></li>
+  <li><div><p>Complete-state recall uses a short audio dezipper around the commit to avoid abrupt discontinuities without stopping the clock, sequencer or MIDI. The seven slots can also be recalled through MIDI keyswitches.</p></div></li>
+</ol></div>
+<div class="guide-topic"><h3>64 PATTERN LOCATIONS</h3><p>Sequence memory is separate from the timbral preset bank and stores complete 32-step pattern data.</p><ol class="steps">
+  <li><div><p>MANUAL SAVE lets you edit freely and write only when you explicitly store the location.</p></div></li>
+  <li><div><p>AUTO SAVE writes edits to the current location automatically.</p></div></li>
+  <li><div><p>WRITE PROTECT keeps edits audible in the running session but blocks memory writes.</p></div></li>
+  <li><div><p>MIDI Program Change 1–64 recalls the 64 pattern locations.</p></div></li>
+  <li><div><p>DELAY PATTERN CHANGE can defer recall to the next cycle boundary; LOAD SAVED TIMING controls whether stored timing values are restored too.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="patch" aria-labelledby="patch-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">06</span><h2 id="patch-title">Patch the voice and ASSIGN output</h2></header>
+        <p class="chapter-intro">Route audio, gate and CV through the patchbay. Choose what ASSIGN sends from the sequencer, clock or MIDI.</p>
+<figure class="manual-shot">
+  <a href="figures/monodia-patch.webp" aria-label="View MONODIA 32 patch controls" tabindex="-1"><img src="figures/monodia-patch.webp" alt="MONODIA 32 patch controls" width="527" height="753" loading="lazy" decoding="async"></a>
+  <figcaption>The 32-socket patch service includes KB, GATE and ASSIGN outputs along the bottom. <a href="figures/monodia-patch.webp" aria-label="Enlarge MONODIA 32 patch controls">Enlarge ↗</a></figcaption>
+</figure>
+<div class="guide-topic"><h3>PATCHBAY — 32 SEMI-MODULAR SOCKETS</h3><p>The patchbay exposes audio, CV, gate, clock and utility endpoints while preserving a useful normalled signal path when no cable is present.</p><ol class="steps">
+  <li><div><p>Patch pitch CV to VCO 1V/OCT; use VCO LIN FM or VCO MOD for frequency modulation.</p></div></li>
+  <li><div><p>Patch CV to VCF CUTOFF or VCF RES for external filter control.</p></div></li>
+  <li><div><p>Patch a gate to GATE IN and use EG OUT as a modulation source when required.</p></div></li>
+  <li><div><p>Use TEMPO for external clock, and RUN/STOP or RESET for external transport control.</p></div></li>
+  <li><div><p>Use MULT 1/2 to distribute signals and VC MIX to combine them; KB, GATE and ASSIGN export performance information.</p></div></li>
+</ol></div>
+<div class="guide-topic"><h3>ASSIGN OUTPUT — 16 SOURCES</h3><p>ASSIGN is a mode-dependent CV output driven by sequencer, clock or MIDI expression sources.</p><ol class="steps">
+  <li><div><p>Modes 1–4 provide ACCENT, CLOCK, CLOCK /2 and CLOCK /4.</p></div></li>
+  <li><div><p>Modes 5–9 provide STEP RAMP, STEP SAW, STEP TRIANGLE, STEP RANDOM and STEP 1 TRIGGER.</p></div></li>
+  <li><div><p>Modes 10–12 provide MIDI VELOCITY, CHANNEL PRESSURE and PITCH BEND.</p></div></li>
+  <li><div><p>Modes 13–16 provide MIDI CC1, CC2, CC4 and CC7.</p></div></li>
+  <li><div><p>MIDI Program Change 71–86 selects ASSIGN modes 1–16 in order.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="extensions" aria-labelledby="extensions-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">07</span><h2 id="extensions-title">Set up EXT, SIG and GEN</h2></header>
+        <p class="chapter-intro">Set MIDI and effects, build a SIG map, and turn a generated variation into a User preset.</p>
+
+<div class="guide-topic"><h3>EXT &amp; SIG</h3><p>Advanced ranges, effects, MIDI and macro mapping.</p><ol class="steps">
+  <li><div><strong class="step-title">Inside EXT</strong><p>EXT opens additional controls for this same instrument. Choose a tab and compare one setting at a time; close EXT to return to the main panel.</p></div></li>
+  <li><div><strong class="step-title">Shape the effect returns</strong><p>DELAY and REVERB in the header set the effect amount. In EXT → EFFECTS, shape the detailed effect controls. Start with a low amount so the original articulation stays clear.</p></div></li>
+  <li><div><strong class="step-title">One gesture, several parameters</strong><p>SIG is the red macro. In EXT → SIG, inspect its assigned targets and use ADD CONTROL to include another parameter. One gesture can then shape several related controls.</p></div></li>
+  <li><div><strong class="step-title">Design the SIG gesture</strong><p>LOW and HIGH define each target’s endpoints. LINEAR and, where available, LOG change its response. Save a signature copy before experimenting. SIG PRESSURE provides pressure-related shaping, including rise and fall times.</p></div></li>
+  <li><div><strong class="step-title">MIDI control and feedback</strong><p>EXT → MIDI contains the instrument’s MIDI options. Check the active channel and mapping before changing your host routing. A MIDI setting is separate from the audio patch cables.</p></div></li>
+</ol></div>
+<div class="guide-topic"><h3>GEN &amp; memories</h3><p>Profiles, ranges, locks, patches and USER library.</p><ol class="steps">
+  <li><div><p>Tap GEN to create a variation. Hold GEN to open its compact settings panel. Adjust VARIATION, then generate from inside the panel to compare results without closing it.</p></div></li>
+  <li><div><strong class="step-title">Constrain the result</strong><p>MIN and MAX bound generated values. Drag vertically to edit; equal bounds fix a value. Explore the range groups, then press GEN inside the panel without closing it.</p></div></li>
+  <li><div><strong class="step-title">Keep what already works</strong><p>A lock keeps the current live value during GEN. Lock the parameters or groups you want to preserve, then generate variations in the remaining part of the sound.</p></div></li>
+  <li><div><strong class="step-title">Routing and generation</strong><p>The PATCH lock preserves the current cables during GEN. Keep it locked while exploring tone without changing your routing. Unlock it when you want GEN to vary the patch too.</p></div></li>
+  <li><div><strong class="step-title">Playing and patterns</strong><p>The header GEN works on the sound as a whole. The GEN inside the sequencer works on the focused sequence slot. Choose the destination slot first; use COPY/PASTE when you want an exact copy instead of a new variation.</p></div></li>
+  <li><div><strong class="step-title">Save a USER sound</strong><p>Open Preset Monitor and save the result explicitly as USER. Generated and edited sounds remain unsaved until you do this. Give the sound a useful name; keep a separate copy before making a major variation.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="fx" aria-labelledby="fx-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">08</span><h2 id="fx-title">Process audio with MONODIA 32 FX</h2></header>
+        <p class="chapter-intro">Use the FX variant to filter a track and articulate it with the sequencer.</p>
+
+<div class="guide-topic"><h3>MONODIA 32 FX</h3><p>Process a track with MONODIA’s filter and sequencer.</p><ol class="steps">
+  <li><div><p>In your host, insert MONODIA 32 FX after an audio source. Start playback. The External Filter preset sets MIX to the external input and leaves VCA MODE on ON.</p></div></li>
+  <li><div><p>Turn CUTOFF while the track plays. Try LOW PASS to remove highs or HIGH PASS to remove lows. Raise RESONANCE gradually to emphasize the cutoff.</p></div></li>
+  <li><div><p>Open SEQ, set VCA MODE to EG on the synth panel, and press PLAY in the sequencer. Try REST steps for gaps and adjust ATTACK and DECAY to shape the pulses. Set VCA MODE back to ON for a continuous signal.</p></div></li>
+  <li><div><p>Use the host’s bypass to hear the original stereo signal. The filter processes the average of both channels. If the track is silent, check the upstream source and recall External Filter.</p></div></li>
+</ol></div>
+      </section>
+      </div>
+    </div>
+  </main>
+  <footer class="manual-wrap manual-footer">
+    <nav aria-label="Footer"><a href="index.html">All manuals</a><a href="https://alessandroguardascione.com/support">Support</a></nav>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+</body>
+</html>

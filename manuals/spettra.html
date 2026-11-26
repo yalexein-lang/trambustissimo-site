@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" style="--accent: #1e5c6d">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reshape a signal band by band, vocode speech or move a spectrum with SHIFT and HOLD.">
+  <title>SPETTRA 10 Manual · Trambustissimo</title>
+  <link rel="icon" href="../assets/trambustissimo-logo.png">
+  <link rel="stylesheet" href="instrument-manuals.css">
+  <link rel="canonical" href="https://trambustissimo.com/manuals/spettra.html">
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="manual-header">
+    <div class="manual-wrap">
+      <a class="brand" href="../"><img src="../assets/trambustissimo-logo.png" alt="" width="34" height="34">Trambustissimo</a>
+      <nav aria-label="Main navigation"><a href="../">Instruments</a><a href="index.html">Manuals</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="manual-hero">
+      <div class="manual-wrap hero-inner">
+        <div>
+          <p class="eyebrow">Spectral processor · Manual</p>
+          <h1>SPETTRA 10</h1>
+          <p class="hero-intro">Reshape a signal band by band, vocode speech or move a spectrum with SHIFT and HOLD.</p>
+          <div class="hero-actions"><a class="manual-button" href="#start">Get started ↓</a><a href="../instruments/spettra/#manual">Product page</a></div>
+        </div>
+        <figure class="manual-shot hero-shot">
+  <a href="../assets/ui/spettra.webp" aria-label="View SPETTRA 10 full instrument interface" tabindex="-1"><img src="../assets/ui/spettra.webp" alt="SPETTRA 10 full instrument interface" width="2732" height="1920" loading="eager" decoding="async"></a>
+  <figcaption>Full interface. <a href="../assets/ui/spettra.webp" aria-label="Enlarge SPETTRA 10 full instrument interface">Enlarge ↗</a></figcaption>
+</figure>
+      </div>
+    </div>
+    <div class="manual-wrap manual-layout">
+      <nav class="manual-toc" aria-labelledby="chapters-title">
+        <h2 id="chapters-title">Chapters</h2>
+        <ol>
+          <li><a href="#start">Hear your first sound</a></li>
+          <li><a href="#vocoder">Route signals and vocode</a></li>
+          <li><a href="#bands">Shape and animate the bands</a></li>
+          <li><a href="#extensions">Set up EXT and SIG</a></li>
+          <li><a href="#memory">Generate and save sounds</a></li>
+        </ol>
+      </nav>
+      <div class="manual-body">
+      <section class="manual-chapter" id="start" aria-labelledby="start-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">01</span><h2 id="start-title">Hear your first sound</h2></header>
+        <p class="chapter-intro">Start with the internal carrier, then bring in a program signal when you want to try the vocoder.</p>
+<figure class="manual-shot">
+  <a href="figures/spettra-signal.webp" aria-label="View SPETTRA 10 signal controls" tabindex="-1"><img src="figures/spettra-signal.webp" alt="SPETTRA 10 signal controls" width="1500" height="492" loading="lazy" decoding="async"></a>
+  <figcaption>SOURCE, SPECTRAL, ANALYSIS / U/V and VCA / OUT define the signal path. <a href="figures/spettra-signal.webp" aria-label="Enlarge SPETTRA 10 signal controls">Enlarge ↗</a></figcaption>
+</figure>
+<ol class="steps">
+  <li><div><strong class="step-title">Load First Sound</strong><p>Open the preset display and choose First Sound. You can start with the internal source without a microphone.</p></div></li>
+  <li><div><strong class="step-title">Tap TRIG</strong><p>Open SPEC. Drag across a few bands to change their transfer levels.</p></div></li>
+  <li><div><strong class="step-title">Move the response</strong><p>Return to MAIN and adjust SHIFT. Try a little RES to hear the shape of the filter bank.</p></div></li>
+</ol>
+      </section>
+      <section class="manual-chapter" id="vocoder" aria-labelledby="vocoder-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">02</span><h2 id="vocoder-title">Route signals and vocode</h2></header>
+        <p class="chapter-intro">Choose PROGRAM and CARRIER, then adjust how the analysis follows speech and transients.</p>
+<figure class="manual-shot">
+  <a href="figures/spettra-signal.webp" aria-label="View SPETTRA 10 signal controls" tabindex="-1"><img src="figures/spettra-signal.webp" alt="SPETTRA 10 signal controls" width="1500" height="492" loading="lazy" decoding="async"></a>
+  <figcaption>The engine selector and the ANALYSIS / U/V controls sit between SOURCE and VCA / OUT. <a href="figures/spettra-signal.webp" aria-label="Enlarge SPETTRA 10 signal controls">Enlarge ↗</a></figcaption>
+</figure>
+<div class="guide-topic"><h3>Inputs &amp; vocoder</h3><p>Signal paths, carrier, analysis and speech detail.</p><ol class="steps">
+  <li><div><strong class="step-title">PROGRAM and CARRIER</strong><p>PROGRAM carries the voice or rhythm to analyze. CARRIER supplies the sound to reshape. VOCODER needs both; FILTER BANK can process the carrier alone. Choose the path before adjusting gain.</p></div></li>
+  <li><div><strong class="step-title">Build the carrier</strong><p>CARR PITCH sets the internal oscillator. VCO WAVE and PW shape its harmonics; VCO / NOISE blends a pitched carrier with noise. EXT CARR selects external audio instead, supplied through the host sidechain.</p></div></li>
+  <li><div><strong class="step-title">Prepare the voice</strong><p>PGM COND controls input conditioning. In EXT → AUDIO, CONDITION GATE manages low-level noise, SPEECH AIR emphasizes speech detail and LEVELER evens the signal. Start gently and compare consonants and pauses.</p></div></li>
+  <li><div><strong class="step-title">Follow articulation</strong><p>ANA SENS changes analysis sensitivity. ANA ATTACK sets how quickly bands respond; ANA RELEASE sets how long they fall away. Short times articulate syllables; longer release joins them into a smoother texture.</p></div></li>
+  <li><div><strong class="step-title">Unvoiced detail</strong><p>U/V PRO restores unvoiced details such as breath and consonants. U/V SENS changes detection; U/V LEVEL sets their amount. U/V ATTACK and RELEASE shape the transition. EXT → SPECTRAL selects the U/V source.</p></div></li>
+  <li><div><strong class="step-title">Choose the analysis engine</strong><p>CLASSIC 10 and PRO 20 use different vocoder analyses. Compare the same voice and carrier before changing other controls. VOCODER DEPTH changes spectral expression; the analysis range and selectivity are available in EXT → SPECTRAL.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="bands" aria-labelledby="bands-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">03</span><h2 id="bands-title">Shape and animate the bands</h2></header>
+        <p class="chapter-intro">Edit the transfer profile in SPEC. Use SHIFT, resonance and HOLD to hear different kinds of motion.</p>
+<figure class="manual-shot">
+  <a href="figures/spettra-bands.webp" aria-label="View SPETTRA 10 bands controls" tabindex="-1"><img src="figures/spettra-bands.webp" alt="SPETTRA 10 bands controls" width="1500" height="610" loading="lazy" decoding="async"></a>
+  <figcaption>The gold lines set transfer levels. The moving bars show input activity. <a href="figures/spettra-bands.webp" aria-label="Enlarge SPETTRA 10 bands controls">Enlarge ↗</a></figcaption>
+</figure>
+<div class="guide-topic"><h3>Bands &amp; motion</h3><p>Transfer levels, SHIFT, resonance, HOLD and VCA.</p><ol class="steps">
+  <li><div><strong class="step-title">Transfer is not a meter</strong><p>In SPEC, the gold line sets each band’s transfer level. The filled bar shows input activity before that level and the output VCA. A moving bar can therefore coexist with a muted band. Drag across columns to draw a spectral contour.</p></div></li>
+  <li><div><strong class="step-title">Shift the spectral response</strong><p>SHIFT moves the spectral response in semitones. It is different from CARR PITCH, which changes the internal oscillator. Hold one still while moving the other to hear the difference between carrier pitch and spectral position.</p></div></li>
+  <li><div><strong class="step-title">Focus the resonances</strong><p>RES emphasizes the resonant character of the bank. Start low and raise it slowly with several bands active. Lower OUTPUT if the result becomes too strong; compare the spectral contour before adding more motion.</p></div></li>
+  <li><div><strong class="step-title">Animate SHIFT</strong><p>SHIFT RATE sets LFO speed; SHIFT AMT sets its depth. SYNC chooses the clock source and DIV the host subdivision. A small amount gives gentle motion; larger depth sweeps a wider spectral region.</p></div></li>
+  <li><div><strong class="step-title">Freeze the articulation</strong><p>HOLD retains the vocoder’s spectral envelopes. The live input meters still follow incoming audio; they do not become the frozen sound. Compare HOLD on and off with speech to hear which articulation is being retained.</p></div></li>
+  <li><div><strong class="step-title">Shape the output envelope</strong><p>VCA MODE selects continuous ON or envelope-controlled EG. In EG, TRIG starts a note and VCA DECAY sets its fall. PGM → EG allows program-derived triggering. Check this stage when the input meters move but output remains silent.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="extensions" aria-labelledby="extensions-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">04</span><h2 id="extensions-title">Set up EXT and SIG</h2></header>
+        <p class="chapter-intro">Tune the analysis ranges and effects, map MIDI and build a multi-parameter SIG gesture.</p>
+
+<div class="guide-topic"><h3>EXT &amp; SIG</h3><p>Advanced ranges, effects, MIDI and macro mapping.</p><ol class="steps">
+  <li><div><strong class="step-title">Inside EXT</strong><p>EXT groups MIDI, EFFECTS, AUDIO, SPECTRAL, PERF, SIG and SIG PRESSURE. Choose one tab at a time. These controls act on the same sound as the main panel; EXT is not a second instrument.</p></div></li>
+  <li><div><strong class="step-title">Set the analysis window</strong><p>In EXT → SPECTRAL, CLASSIC RANGE LOW / HIGH and PRO 20 RANGE LOW / HIGH set each engine’s analysis span. PRO 20 SELECTIVITY focuses separation. Change one boundary at a time and compare the same input.</p></div></li>
+  <li><div><strong class="step-title">Shape the effect returns</strong><p>DELAY and REVERB in the header control wet amount. EXT → EFFECTS exposes time, feedback, size, decay and modulation. Begin with a low wet level, then adjust the effect itself while keeping the original articulation audible.</p></div></li>
+  <li><div><strong class="step-title">MIDI control and feedback</strong><p>EXT → MIDI shows the active control mapping. SPETTRA uses fixed MIDI CC control and feedback; CC 14 at 64 or above triggers a hit. This audio effect does not use per-note MPE configuration.</p></div></li>
+  <li><div><strong class="step-title">One gesture, several parameters</strong><p>SIG is the red signature macro. In EXT → SIG, choose an assigned target or use ADD CONTROL to add one. The macro moves its assigned parameters together; inspect the target list before turning it.</p></div></li>
+  <li><div><strong class="step-title">Design the SIG gesture</strong><p>LOW and HIGH define each target’s endpoints. LINEAR and, where available, LOG change its response. Save a signature copy before experimenting. SIG PRESSURE provides pressure-related shaping, including rise and fall times.</p></div></li>
+</ol></div>
+      </section>
+      <section class="manual-chapter" id="memory" aria-labelledby="memory-title">
+        <header class="chapter-header"><span class="chapter-number" aria-hidden="true">05</span><h2 id="memory-title">Generate and save sounds</h2></header>
+        <p class="chapter-intro">Generate within chosen ranges and locks. Save a result to the User library when it works for your input.</p>
+
+<div class="guide-topic"><h3>GEN &amp; memories</h3><p>Profiles, ranges, locks, patches and USER library.</p><ol class="steps">
+  <li><div><strong class="step-title">Choose a generation profile</strong><p>Hold GEN to open its panel. AUTO, WARM, FORMANT, MOTION and AIR guide the spectral character. VARIATION controls the degree of change. These are generator settings: selecting them does not itself generate a new sound.</p></div></li>
+  <li><div><strong class="step-title">Constrain the result</strong><p>MIN and MAX bound each generated parameter. Drag values vertically; equal bounds make a fixed value. SOUND, ENV and FX separate the ranges by role. Press GEN inside the panel to generate without closing it.</p></div></li>
+  <li><div><strong class="step-title">Keep what already works</strong><p>LOCKS protects parameter groups during GEN. A lock keeps their current live values, rather than choosing new values within the range. Use it to retain the carrier, band contour or articulation while exploring another part of the sound.</p></div></li>
+  <li><div><strong class="step-title">Routing and generation</strong><p>The PATCH lock retains existing cables. With it unlocked, GEN can explore modulation routes while preserving external input hookups. In the patchbay, connect an output to an input deliberately; the tutorial never patches or enables audio for you.</p></div></li>
+  <li><div><strong class="step-title">Save a USER sound</strong><p>Open Preset Monitor and save the result explicitly as USER. Generated and edited sounds remain unsaved until you do this. Give the sound a useful name; keep a separate copy before making a major variation.</p></div></li>
+  <li><div><strong class="step-title">Library and optional sync</strong><p>Standalone and AUv3 share the product’s USER library. Optional iCloud sync needs the native app and explicit activation. Local sounds remain usable offline. Enable sync only if you want these presets on your other devices.</p></div></li>
+</ol></div>
+      </section>
+      </div>
+    </div>
+  </main>
+  <footer class="manual-wrap manual-footer">
+    <nav aria-label="Footer"><a href="index.html">All manuals</a><a href="https://alessandroguardascione.com/support">Support</a></nav>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+</body>
+</html>
