@@ -1,4 +1,12 @@
 @font-face {
+  font-family: "Instrument Serif";
+  src: url("assets/fonts/instrument-serif-italic-latin.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
   font-family: Space Grotesk;
   src: url("assets/fonts/space-grotesk-latin.woff2") format("woff2");
   font-weight: 300 700;
@@ -81,14 +89,32 @@ h1 {
   letter-spacing: -.072em;
 }
 
-h1 span {
-  display: block;
-  margin-top: .75em;
+.masthead-copy { min-width: 0; }
+
+.masthead-motto {
+  margin: .18em 0 0;
+  color: #f37163;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(1.65rem, 3.5vw, 3.45rem);
+  font-style: italic;
+  line-height: .98;
+  letter-spacing: .026em;
+}
+
+:root[data-instrument] .masthead-motto { color: var(--ink); }
+
+.masthead-beta {
+  margin: .8em 0 0;
   color: var(--muted);
-  font-size: clamp(.7rem, 1.35vw, .92rem);
+  font-size: clamp(.72rem, 1.4vw, .88rem);
+  line-height: 1.45;
+}
+
+.masthead-beta a {
+  color: var(--ink);
   font-weight: 600;
-  letter-spacing: .2em;
-  text-transform: uppercase;
+  text-underline-offset: .19em;
+  white-space: nowrap;
 }
 
 main, .site-footer {
