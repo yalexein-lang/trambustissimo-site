@@ -383,6 +383,25 @@ main, .site-footer {
   line-height: 1.45;
 }
 
+.newsletter-status {
+  margin: 0;
+  color: var(--newsletter-ink);
+  font-size: .85rem;
+  line-height: 1.45;
+}
+
+.newsletter-status:not(:empty) {
+  margin-top: 12px;
+  padding: 9px 11px;
+  border: 1px solid var(--newsletter-line);
+  border-radius: 6px;
+  background: #232126;
+}
+
+.newsletter-status[data-state="success"] { border-color: #739d82; }
+.newsletter-status[data-state="error"] { border-color: #a67270; }
+.newsletter-fields button:disabled { cursor: wait; opacity: .75; }
+
 .newsletter-links {
   display: flex;
   flex-wrap: wrap;
